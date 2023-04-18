@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-04-12T07:22:36.573Z",
+    "end": "2023-04-12T07:22:41.841Z",
+    "duration": 5268,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a48421a6-ea4e-4490-b2bb-2ea72ca6ed25",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/01.LoginPage.cy.js",
+      "file": "cypress/e2e/_requirements/01.LoginPage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "782ccac3-32a4-4cb2-b189-0b38108018ec",
+          "title": "1 - Crie uma página inicial de login com os seguintes campos e características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A rota para esta página deve ser '/'",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: A rota para esta página deve ser '/'",
+              "timedOut": null,
+              "duration": 298,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.location('pathname').should('eq', '/');",
+              "err": {},
+              "uuid": "baf39e25-a2dc-499b-b536-f40a0d668605",
+              "parentUUID": "782ccac3-32a4-4cb2-b189-0b38108018ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Crie um local para que o usuário insira seu email e senha",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: Crie um local para que o usuário insira seu email e senha",
+              "timedOut": null,
+              "duration": 89,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).should('exist');\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).should('exist');",
+              "err": {},
+              "uuid": "f0ff1cc6-dc96-4abd-af6d-00130e6bf479",
+              "parentUUID": "782ccac3-32a4-4cb2-b189-0b38108018ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Crie um botão com o texto 'Entrar'",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: Crie um botão com o texto 'Entrar'",
+              "timedOut": null,
+              "duration": 71,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains(/Entrar/i).should('exist');",
+              "err": {},
+              "uuid": "9fb6deba-082e-4d0f-a206-9ea226425105",
+              "parentUUID": "782ccac3-32a4-4cb2-b189-0b38108018ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Realize as seguintes verificações nos campos de email, senha e botão:",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: Realize as seguintes verificações nos campos de email, senha e botão:",
+              "timedOut": null,
+              "duration": 2572,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).type(_constants.INVALID_EMAIL_0);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.INVALID_EMAIL_1);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.INVALID_EMAIL_2);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.INVALID_EMAIL_3);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.VALID_EMAIL);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.INVALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.VALID_EMAIL);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('not.be.disabled');",
+              "err": {},
+              "uuid": "867b9f99-3fe6-458d-8a10-d031f8563517",
+              "parentUUID": "782ccac3-32a4-4cb2-b189-0b38108018ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Salve o email no estado da aplicação, com a chave email, assim que o usuário logar.",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: Salve o email no estado da aplicação, com a chave email, assim que o usuário logar.",
+              "timedOut": null,
+              "duration": 579,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _helperFunctions.logInWithValidCredentials)();\ncy.window().its('store').invoke('getState').its('user.email').should('eq', _constants.VALID_EMAIL);",
+              "err": {},
+              "uuid": "4fcdfb24-7007-4360-b964-f908a18e8e99",
+              "parentUUID": "782ccac3-32a4-4cb2-b189-0b38108018ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "A rota deve ser mudada para '/carteira' após o clique no botão.",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: A rota deve ser mudada para '/carteira' após o clique no botão.",
+              "timedOut": null,
+              "duration": 570,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _helperFunctions.logInWithValidCredentials)();\ncy.location('pathname').should('eq', '/carteira');",
+              "err": {},
+              "uuid": "c2b2fcc2-b2bd-4ea8-bcfc-b469a7872093",
+              "parentUUID": "782ccac3-32a4-4cb2-b189-0b38108018ec",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "baf39e25-a2dc-499b-b536-f40a0d668605",
+            "f0ff1cc6-dc96-4abd-af6d-00130e6bf479",
+            "9fb6deba-082e-4d0f-a206-9ea226425105",
+            "867b9f99-3fe6-458d-8a10-d031f8563517",
+            "4fcdfb24-7007-4360-b964-f908a18e8e99",
+            "c2b2fcc2-b2bd-4ea8-bcfc-b469a7872093"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4179,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

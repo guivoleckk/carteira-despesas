@@ -1,0 +1,153 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2023-04-12T18:46:34.959Z",
+    "end": "2023-04-12T18:47:03.745Z",
+    "duration": 28786,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "54212012-e06e-449c-b60f-8b00977e434f",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/08.DeleteExpense.cy.js",
+      "file": "cypress/e2e/_requirements/08.DeleteExpense.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b3ec2901-39c1-48c6-948c-3b4ff6a7a1b2",
+          "title": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"delete-btn\"`",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"delete-btn\"`",
+              "timedOut": null,
+              "duration": 2768,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tbody tr').first().find('td').last().find(`button[data-testid=\"${_constants.BTN_DELETE_TEST_ID}\"]`).should('exist');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).should('have.length', 2);",
+              "err": {},
+              "uuid": "6af91fec-ab71-48da-be6a-a9012f3ea576",
+              "parentUUID": "b3ec2901-39c1-48c6-948c-3b4ff6a7a1b2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global.",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global.",
+              "timedOut": null,
+              "duration": 12473,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const expectedTableRow = ['Cinco euros', 'Lazer', 'Cartão de crédito', '5.00', 'Euro/Real Brasileiro', '5.13', '25.63', 'Real'];\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click().should('not.exist');\nconst deleteBtn = 1;\ncy.get('tbody tr td').should('have.length', expectedTableRow.length + deleteBtn);\ncy.wrap(expectedTableRow).each(expectedValue => {\n  cy.get('tbody tr td').contains(expectedValue);\n});\nconst expectedExpenses = [_objectSpread(_objectSpread({}, _constants.initialExpenses[1]), {}, {\n  id: 1,\n  exchangeRates: _data.mockData\n})];\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', expectedExpenses);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10050ms: Expected <button> not to exist in the DOM, but it was continuously found.",
+                "estack": "AssertionError: Timed out retrying after 10050ms: Expected <button> not to exist in the DOM, but it was continuously found.\n    at Context.eval (webpack:///./cypress/e2e/_requirements/08.DeleteExpense.cy.js:33:55)",
+                "diff": null
+              },
+              "uuid": "506a8221-6908-4c3f-b16e-97c8302c84be",
+              "parentUUID": "b3ec2901-39c1-48c6-948c-3b4ff6a7a1b2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Ao clicar no botão para remover uma despesa, o valor correspondente deve ser subtraído e a despesa total deve ser atualizada no header",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: Ao clicar no botão para remover uma despesa, o valor correspondente deve ser subtraído e a despesa total deve ser atualizada no header",
+              "timedOut": null,
+              "duration": 12430,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '73.16');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click();\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '25.63');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click();\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '0.00');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: expected '<p>' to have text '25.63', but the text was '73.16'",
+                "estack": "AssertionError: Timed out retrying after 10000ms: expected '<p>' to have text '25.63', but the text was '73.16'\n    at Context.eval (webpack:///./cypress/e2e/_requirements/08.DeleteExpense.cy.js:59:40)",
+                "diff": "- '73.16'\n+ '25.63'\n"
+              },
+              "uuid": "6dbccfb4-8b42-4783-89d4-3fd95a58fe1e",
+              "parentUUID": "b3ec2901-39c1-48c6-948c-3b4ff6a7a1b2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6af91fec-ab71-48da-be6a-a9012f3ea576"
+          ],
+          "failures": [
+            "506a8221-6908-4c3f-b16e-97c8302c84be",
+            "6dbccfb4-8b42-4783-89d4-3fd95a58fe1e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 27671,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

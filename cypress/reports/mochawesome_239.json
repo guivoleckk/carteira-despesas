@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-04-12T18:51:56.092Z",
+    "end": "2023-04-12T18:51:59.279Z",
+    "duration": 3187,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a4192e2e-6aa5-45d0-a383-b5356dad77f2",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/02.Header.cy.js",
+      "file": "cypress/e2e/_requirements/02.Header.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "91d54c7d-5d71-481f-b91e-ee03f3b68f43",
+          "title": "2 - Crie um header para a página de carteira contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Um elemento que exiba o email do usuário que fez login.",
+              "fullTitle": "2 - Crie um header para a página de carteira contendo as seguintes características: Um elemento que exiba o email do usuário que fez login.",
+              "timedOut": null,
+              "duration": 987,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.EMAIL_FIELD_TEST_ID).should('contain', _constants.VALID_EMAIL);",
+              "err": {},
+              "uuid": "4842a3d3-479a-42e6-ae99-3fe869d82b47",
+              "parentUUID": "91d54c7d-5d71-481f-b91e-ee03f3b68f43",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Crie um campo com a despesa total gerada pela lista de gastos.",
+              "fullTitle": "2 - Crie um header para a página de carteira contendo as seguintes características: Crie um campo com a despesa total gerada pela lista de gastos.",
+              "timedOut": null,
+              "duration": 591,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('contain', '0');",
+              "err": {},
+              "uuid": "1c333e5d-73e0-4986-9353-144487b8f2f0",
+              "parentUUID": "91d54c7d-5d71-481f-b91e-ee03f3b68f43",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Crie um campo que mostre que qual câmbio está sendo utilizado, que será neste caso 'BRL'",
+              "fullTitle": "2 - Crie um header para a página de carteira contendo as seguintes características: Crie um campo que mostre que qual câmbio está sendo utilizado, que será neste caso 'BRL'",
+              "timedOut": null,
+              "duration": 574,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.HEADER_CURRENCY_FIELD_TEST_ID).should('contain', 'BRL');",
+              "err": {},
+              "uuid": "e8d12d5d-8b9a-414b-aeb4-f53c44287e3e",
+              "parentUUID": "91d54c7d-5d71-481f-b91e-ee03f3b68f43",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4842a3d3-479a-42e6-ae99-3fe869d82b47",
+            "1c333e5d-73e0-4986-9353-144487b8f2f0",
+            "e8d12d5d-8b9a-414b-aeb4-f53c44287e3e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2152,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-04-15T00:14:59.500Z",
+    "end": "2023-04-15T00:15:01.747Z",
+    "duration": 2247,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "eb833dd9-15fe-4042-ad15-cf3088c2d9f3",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/06.ExpensesTable.cy.js",
+      "file": "cypress/e2e/_requirements/06.ExpensesTable.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ea956471-9ba7-4cca-900d-1b1ca1dcd431",
+          "title": "6 - Desenvolva uma tabela com os gastos contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A tabela deve possuir um cabeçalho com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão",
+              "fullTitle": "6 - Desenvolva uma tabela com os gastos contendo as seguintes características: A tabela deve possuir um cabeçalho com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão",
+              "timedOut": null,
+              "duration": 1162,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('th').should('have.length', _constants.tableHeaderList.length);\ncy.wrap(_constants.tableHeaderList).each(header => {\n  cy.get('th').contains(header);\n});",
+              "err": {},
+              "uuid": "d7b15bf4-3eb4-45da-9057-0ca71a71cfe9",
+              "parentUUID": "ea956471-9ba7-4cca-900d-1b1ca1dcd431",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d7b15bf4-3eb4-45da-9057-0ca71a71cfe9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1162,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

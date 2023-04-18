@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-04-15T00:14:47.769Z",
+    "end": "2023-04-15T00:14:57.172Z",
+    "duration": 9403,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "900ccb61-77ba-4544-8c95-e8a81cc2a8e9",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/04.SaveExpensesForm.cy.js",
+      "file": "cypress/e2e/_requirements/04.SaveExpensesForm.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "58eb1afe-d121-4456-887b-e1d27e95026c",
+          "title": "4 - Salve todas as informações do formulário no estado global",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adiciona uma despesa e verifica se a soma de despesas do header foi atualizada e os inputs voltaram ao valor inicial",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona uma despesa e verifica se a soma de despesas do header foi atualizada e os inputs voltaram ao valor inicial",
+              "timedOut": null,
+              "duration": 1876,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\n(0, _helperFunctions.addExpense)(expense);\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '52.28');\ncy.getByTestId(_constants.VALUE_INPUT_TEST_ID).should('have.value', '');\ncy.getByTestId(_constants.DESCRIPTION_INPUT_TEST_ID).should('have.value', '');",
+              "err": {},
+              "uuid": "c7a64a85-7517-4b12-a551-99992f4daba2",
+              "parentUUID": "58eb1afe-d121-4456-887b-e1d27e95026c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adiciona uma despesa e verifica se a despesa foi salva no estado global",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona uma despesa e verifica se a despesa foi salva no estado global",
+              "timedOut": null,
+              "duration": 1472,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\n(0, _helperFunctions.addExpense)(expense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [_objectSpread(_objectSpread({}, expense), {}, {\n  id: 0,\n  exchangeRates: _data.mockData\n})]);",
+              "err": {},
+              "uuid": "6710cd98-258a-43b1-84a4-cbd020f0c6cd",
+              "parentUUID": "58eb1afe-d121-4456-887b-e1d27e95026c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verifica se a API é chamada a cada vez que o botão 'Adicionar despesa' é clicado",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Verifica se a API é chamada a cada vez que o botão 'Adicionar despesa' é clicado",
+              "timedOut": null,
+              "duration": 2330,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\ncy.get('@mockFetch').should('be.calledOnce');\n(0, _helperFunctions.addExpense)(expense);\ncy.get('@mockFetch').should('be.calledTwice');\n(0, _helperFunctions.addExpense)(expense);\ncy.get('@mockFetch').should('be.calledThrice');",
+              "err": {},
+              "uuid": "5052d203-f859-42b1-81ea-510d458cb560",
+              "parentUUID": "58eb1afe-d121-4456-887b-e1d27e95026c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adiciona duas despesas e verifica se o estado global e header foram atualizados",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona duas despesas e verifica se o estado global e header foram atualizados",
+              "timedOut": null,
+              "duration": 2355,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const firstExpense = {\n  id: 0,\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares',\n  exchangeRates: _data.mockData\n};\n(0, _helperFunctions.addExpense)(firstExpense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [firstExpense]);\nconst secondExpense = {\n  id: 1,\n  value: '20',\n  currency: 'EUR',\n  method: 'Cartão de débito',\n  tag: 'Trabalho',\n  description: 'Vinte euros',\n  exchangeRates: _data.mockData\n};\n(0, _helperFunctions.addExpense)(secondExpense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [firstExpense, secondExpense]);\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '154.82');",
+              "err": {},
+              "uuid": "bc9c3f24-8b94-4e8c-bcdf-4f9b68f73d73",
+              "parentUUID": "58eb1afe-d121-4456-887b-e1d27e95026c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c7a64a85-7517-4b12-a551-99992f4daba2",
+            "6710cd98-258a-43b1-84a4-cbd020f0c6cd",
+            "5052d203-f859-42b1-81ea-510d458cb560",
+            "bc9c3f24-8b94-4e8c-bcdf-4f9b68f73d73"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8033,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

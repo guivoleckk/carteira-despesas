@@ -1,0 +1,172 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 2,
+    "pending": 0,
+    "failures": 2,
+    "start": "2023-04-14T20:47:59.003Z",
+    "end": "2023-04-14T20:47:59.122Z",
+    "duration": 119,
+    "testsRegistered": 4,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2035fabc-70ff-4c51-a4d6-7ccc2d006033",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/05.TestCoverage.cy.js",
+      "file": "cypress/e2e/_requirements/05.TestCoverage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "130dd253-6f57-4c97-ad95-e3caddac465a",
+          "title": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cobertura de \"Statements\" total deverá ser maior ou igual a 60.",
+              "fullTitle": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação Cobertura de \"Statements\" total deverá ser maior ou igual a 60.",
+              "timedOut": null,
+              "duration": 21,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.statements.pct', {\n  timeout: 0\n}).should('be.gte', 60.00);",
+              "err": {},
+              "uuid": "df7e0183-a7bf-447f-9c87-891b6fc0e820",
+              "parentUUID": "130dd253-6f57-4c97-ad95-e3caddac465a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Functions\" total deverá ser maior ou igual a 60.",
+              "fullTitle": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação Cobertura de \"Functions\" total deverá ser maior ou igual a 60.",
+              "timedOut": null,
+              "duration": 16,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.functions.pct', {\n  timeout: 0\n}).should('be.gte', 60.00);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 0ms: expected 55 to be at least 60",
+                "estack": "AssertionError: Timed out retrying after 0ms: expected 55 to be at least 60\n    at Context.eval (webpack:///./cypress/e2e/_requirements/05.TestCoverage.cy.js:9:79)",
+                "diff": "- 55\n+ 60\n"
+              },
+              "uuid": "6034424f-8430-426e-bb71-38a71dab8cb2",
+              "parentUUID": "130dd253-6f57-4c97-ad95-e3caddac465a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Branches\" total deverá ser maior ou igual a 60.",
+              "fullTitle": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação Cobertura de \"Branches\" total deverá ser maior ou igual a 60.",
+              "timedOut": null,
+              "duration": 13,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.branches.pct', {\n  timeout: 0\n}).should('be.gte', 60.00);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 0ms: expected 55.55 to be at least 60",
+                "estack": "AssertionError: Timed out retrying after 0ms: expected 55.55 to be at least 60\n    at Context.eval (webpack:///./cypress/e2e/_requirements/05.TestCoverage.cy.js:13:78)",
+                "diff": "- 55.55\n+ 60\n"
+              },
+              "uuid": "e49c1ab6-e8f0-4fbf-a442-3a9f2f817401",
+              "parentUUID": "130dd253-6f57-4c97-ad95-e3caddac465a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Lines\" total deverá ser maior ou igual a 60.",
+              "fullTitle": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação Cobertura de \"Lines\" total deverá ser maior ou igual a 60.",
+              "timedOut": null,
+              "duration": 10,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.lines.pct', {\n  timeout: 0\n}).should('be.gte', 60.00);",
+              "err": {},
+              "uuid": "95237eaa-ba6d-4e24-a59c-56d2d5b0e966",
+              "parentUUID": "130dd253-6f57-4c97-ad95-e3caddac465a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "df7e0183-a7bf-447f-9c87-891b6fc0e820",
+            "95237eaa-ba6d-4e24-a59c-56d2d5b0e966"
+          ],
+          "failures": [
+            "6034424f-8430-426e-bb71-38a71dab8cb2",
+            "e49c1ab6-e8f0-4fbf-a442-3a9f2f817401"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 60,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 4,
+    "pending": 0,
+    "failures": 2,
+    "start": "2023-04-11T23:09:45.407Z",
+    "end": "2023-04-11T23:10:10.505Z",
+    "duration": 25098,
+    "testsRegistered": 6,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b8ce7793-4706-4894-8244-29e94a270f8f",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/03.ExpensesForm.cy.js",
+      "file": "cypress/e2e/_requirements/03.ExpensesForm.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "022f092c-6f4d-4822-b32f-d59f0ff100b2",
+          "title": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Um campo para adicionar o valor da despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para adicionar o valor da despesa",
+              "timedOut": null,
+              "duration": 940,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.VALUE_INPUT_TEST_ID).should('exist');",
+              "err": {},
+              "uuid": "dc44505b-3d5a-4f19-8467-920587e664e9",
+              "parentUUID": "022f092c-6f4d-4822-b32f-d59f0ff100b2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para adicionar a descrição da despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para adicionar a descrição da despesa",
+              "timedOut": null,
+              "duration": 587,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.DESCRIPTION_INPUT_TEST_ID).should('exist');",
+              "err": {},
+              "uuid": "e1c61823-1eec-498b-9d20-b3f343e78171",
+              "parentUUID": "022f092c-6f4d-4822-b32f-d59f0ff100b2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para selecionar em qual moeda será registrada a despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar em qual moeda será registrada a despesa",
+              "timedOut": null,
+              "duration": 10611,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.CURRENCY_INPUT_TEST_ID).find('option').should('have.length', _constants.currenciesOptions.length);\ncy.wrap(_constants.currenciesOptions).each(currency => {\n  cy.getByTestId(_constants.CURRENCY_INPUT_TEST_ID).contains('option', currency).should('exist');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Too many elements found. Found '16', expected '15'.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Too many elements found. Found '16', expected '15'.\n    at Context.eval (webpack:///./cypress/e2e/_requirements/03.ExpensesForm.cy.js:31:58)",
+                "diff": "- 16\n+ 15\n"
+              },
+              "uuid": "036bf97a-7d63-449a-b708-90b1f4d8559e",
+              "parentUUID": "022f092c-6f4d-4822-b32f-d59f0ff100b2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "A chave currencies no estado global deve ser um array de siglas puxadas através de uma requisição à API",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: A chave currencies no estado global deve ser um array de siglas puxadas através de uma requisição à API",
+              "timedOut": null,
+              "duration": 10581,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@mockFetch').should('be.calledWith', 'https://economia.awesomeapi.com.br/json/all');\ncy.window().its('store').invoke('getState').its('wallet.currencies').should('deep.equal', _constants.currenciesOptions);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: expected [ Array(16) ] to deeply equal [ Array(15) ]",
+                "estack": "AssertionError: Timed out retrying after 10000ms: expected [ Array(16) ] to deeply equal [ Array(15) ]\n    at Context.eval (webpack:///./cypress/e2e/_requirements/03.ExpensesForm.cy.js:43:7)",
+                "diff": " [ 'USD',\n-   'USDT',\n   'CAD',\n   'EUR',\n   'GBP',\n   'ARS',\n"
+              },
+              "uuid": "2afd6139-b176-483c-9e4f-8d77c814a4f3",
+              "parentUUID": "022f092c-6f4d-4822-b32f-d59f0ff100b2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para selecionar qual método de pagamento será utilizado",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar qual método de pagamento será utilizado",
+              "timedOut": null,
+              "duration": 606,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.METHOD_INPUT_TEST_ID).find('option').should('have.length', _constants.methodOptions.length);\ncy.wrap(_constants.methodOptions).each(method => {\n  cy.getByTestId(_constants.METHOD_INPUT_TEST_ID).contains('option', method).should('exist');\n});",
+              "err": {},
+              "uuid": "73e8dd1e-52cb-4ed2-8059-47b6409e4b1a",
+              "parentUUID": "022f092c-6f4d-4822-b32f-d59f0ff100b2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para selecionar uma categoria (tag) para a despesa.",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar uma categoria (tag) para a despesa.",
+              "timedOut": null,
+              "duration": 612,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TAG_INPUT_TEST_ID).find('option').should('have.length', _constants.tagOptions.length);\ncy.wrap(_constants.tagOptions).each(tag => {\n  cy.getByTestId(_constants.TAG_INPUT_TEST_ID).contains('option', tag).should('exist');\n});",
+              "err": {},
+              "uuid": "57a04726-1b6f-4d64-87c0-357226ba68f1",
+              "parentUUID": "022f092c-6f4d-4822-b32f-d59f0ff100b2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dc44505b-3d5a-4f19-8467-920587e664e9",
+            "e1c61823-1eec-498b-9d20-b3f343e78171",
+            "73e8dd1e-52cb-4ed2-8059-47b6409e4b1a",
+            "57a04726-1b6f-4d64-87c0-357226ba68f1"
+          ],
+          "failures": [
+            "036bf97a-7d63-449a-b708-90b1f4d8559e",
+            "2afd6139-b176-483c-9e4f-8d77c814a4f3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 23937,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2023-04-12T06:55:52.912Z",
+    "end": "2023-04-12T06:56:40.365Z",
+    "duration": 47453,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5dd03a05-a779-4321-bd96-5edae2e4d50a",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/04.SaveExpensesForm.cy.js",
+      "file": "cypress/e2e/_requirements/04.SaveExpensesForm.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d10c30f5-404a-49b5-9846-e15d8447af9d",
+          "title": "4 - Salve todas as informações do formulário no estado global",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adiciona uma despesa e verifica se a soma de despesas do header foi atualizada e os inputs voltaram ao valor inicial",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona uma despesa e verifica se a soma de despesas do header foi atualizada e os inputs voltaram ao valor inicial",
+              "timedOut": null,
+              "duration": 11834,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\n(0, _helperFunctions.addExpense)(expense);\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '52.28');\ncy.getByTestId(_constants.VALUE_INPUT_TEST_ID).should('have.value', '');\ncy.getByTestId(_constants.DESCRIPTION_INPUT_TEST_ID).should('have.value', '');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: expected '<p>' to have text '52.28', but the text was '0.00'",
+                "estack": "AssertionError: Timed out retrying after 10000ms: expected '<p>' to have text '52.28', but the text was '0.00'\n    at Context.eval (webpack:///./cypress/e2e/_requirements/04.SaveExpensesForm.cy.js:34:40)",
+                "diff": "- '0.00'\n+ '52.28'\n"
+              },
+              "uuid": "43918f3b-c965-406d-88f8-3cd94780c7d8",
+              "parentUUID": "d10c30f5-404a-49b5-9846-e15d8447af9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adiciona uma despesa e verifica se a despesa foi salva no estado global",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona uma despesa e verifica se a despesa foi salva no estado global",
+              "timedOut": null,
+              "duration": 11477,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\n(0, _helperFunctions.addExpense)(expense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [_objectSpread(_objectSpread({}, expense), {}, {\n  id: 0,\n  exchangeRates: _data.mockData\n})]);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: expected [] to deeply equal [ Array(1) ]",
+                "estack": "AssertionError: Timed out retrying after 10000ms: expected [] to deeply equal [ Array(1) ]\n    at Context.eval (webpack:///./cypress/e2e/_requirements/04.SaveExpensesForm.cy.js:53:7)",
+                "diff": "- []\n+ [ { value: '11',\n+     currency: 'USD',\n+     method: 'Cartão de crédito',\n+     tag: 'Lazer',\n+     description: 'Onze dólares',\n+     id: 0,\n+     exchangeRates: \n+      { USD: [Object],\n+        CAD: [Object],\n+        EUR: [Object],\n+        GBP: [Object],\n+        ARS: [Object],\n+        BTC: [Object],\n+        LTC: [Object],\n+        JPY: [Object],\n+        CHF: [Object],\n+        AUD: [Object],\n+        CNY: [Object],\n+        ILS: [Object],\n+        ETH: [Object],\n+        XRP: [Object],\n+        DOGE: [Object] } } ]\n"
+              },
+              "uuid": "b4ff3820-1f6b-4358-9850-96cea40fdbe3",
+              "parentUUID": "d10c30f5-404a-49b5-9846-e15d8447af9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verifica se a API é chamada a cada vez que o botão 'Adicionar despesa' é clicado",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Verifica se a API é chamada a cada vez que o botão 'Adicionar despesa' é clicado",
+              "timedOut": null,
+              "duration": 11479,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\ncy.get('@mockFetch').should('be.calledOnce');\n(0, _helperFunctions.addExpense)(expense);\ncy.get('@mockFetch').should('be.calledTwice');\n(0, _helperFunctions.addExpense)(expense);\ncy.get('@mockFetch').should('be.calledThrice');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: expected mockFetch to have been called exactly twice, but it was called once\n\n    The following calls were made:\n\n    mockFetch(\"https://economia.awesomeapi.com.br/json/all\") => {} at mockFetch (http://localhost:3000/__cypress/runner/cypress_runner.js:123891:26)",
+                "estack": "AssertionError: Timed out retrying after 10000ms: expected mockFetch to have been called exactly twice, but it was called once\n\n    The following calls were made:\n\n    at <unknown> (    mockFetch\"https://economia.awesomeapi.com.br/json/all\" => {} at mockFetch http://localhost:3000/__cypress/runner/cypress_runner.js:123891:26)\n    at Context.eval (webpack:///./cypress/e2e/_requirements/04.SaveExpensesForm.cy.js:75:25)",
+                "diff": null
+              },
+              "uuid": "b48b0c65-0b9c-4d78-a295-9bfa3ce3834a",
+              "parentUUID": "d10c30f5-404a-49b5-9846-e15d8447af9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adiciona duas despesas e verifica se o estado global e header foram atualizados",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona duas despesas e verifica se o estado global e header foram atualizados",
+              "timedOut": null,
+              "duration": 11480,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const firstExpense = {\n  id: 0,\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares',\n  exchangeRates: _data.mockData\n};\n(0, _helperFunctions.addExpense)(firstExpense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [firstExpense]);\nconst secondExpense = {\n  id: 1,\n  value: '20',\n  currency: 'EUR',\n  method: 'Cartão de débito',\n  tag: 'Trabalho',\n  description: 'Vinte euros',\n  exchangeRates: _data.mockData\n};\n(0, _helperFunctions.addExpense)(secondExpense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [firstExpense, secondExpense]);\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '154.82');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: expected [] to deeply equal [ Array(1) ]",
+                "estack": "AssertionError: Timed out retrying after 10000ms: expected [] to deeply equal [ Array(1) ]\n    at Context.eval (webpack:///./cypress/e2e/_requirements/04.SaveExpensesForm.cy.js:97:7)",
+                "diff": "- []\n+ [ { id: 0,\n+     value: '11',\n+     currency: 'USD',\n+     method: 'Cartão de crédito',\n+     tag: 'Lazer',\n+     description: 'Onze dólares',\n+     exchangeRates: \n+      { USD: [Object],\n+        CAD: [Object],\n+        EUR: [Object],\n+        GBP: [Object],\n+        ARS: [Object],\n+        BTC: [Object],\n+        LTC: [Object],\n+        JPY: [Object],\n+        CHF: [Object],\n+        AUD: [Object],\n+        CNY: [Object],\n+        ILS: [Object],\n+        ETH: [Object],\n+        XRP: [Object],\n+        DOGE: [Object] } } ]\n"
+              },
+              "uuid": "4d48eeae-7d1f-44e4-94e5-097a3b6e38ad",
+              "parentUUID": "d10c30f5-404a-49b5-9846-e15d8447af9d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "43918f3b-c965-406d-88f8-3cd94780c7d8",
+            "b4ff3820-1f6b-4358-9850-96cea40fdbe3",
+            "b48b0c65-0b9c-4d78-a295-9bfa3ce3834a",
+            "4d48eeae-7d1f-44e4-94e5-097a3b6e38ad"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 46270,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

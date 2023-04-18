@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-04-15T01:08:04.836Z",
+    "end": "2023-04-15T01:08:09.993Z",
+    "duration": 5157,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6df7bfa8-9412-4512-b692-d3fc3ea09291",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/03.ExpensesForm.cy.js",
+      "file": "cypress/e2e/_requirements/03.ExpensesForm.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a59b3a2e-299e-4391-bbd0-453ae12d707c",
+          "title": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Um campo para adicionar o valor da despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para adicionar o valor da despesa",
+              "timedOut": null,
+              "duration": 948,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.VALUE_INPUT_TEST_ID).should('exist');",
+              "err": {},
+              "uuid": "afe0716a-e151-4f03-bac7-eaab8c278b0f",
+              "parentUUID": "a59b3a2e-299e-4391-bbd0-453ae12d707c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para adicionar a descrição da despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para adicionar a descrição da despesa",
+              "timedOut": null,
+              "duration": 584,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.DESCRIPTION_INPUT_TEST_ID).should('exist');",
+              "err": {},
+              "uuid": "35962b89-0a83-438f-aaea-710cf7b4f4c3",
+              "parentUUID": "a59b3a2e-299e-4391-bbd0-453ae12d707c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para selecionar em qual moeda será registrada a despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar em qual moeda será registrada a despesa",
+              "timedOut": null,
+              "duration": 702,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.CURRENCY_INPUT_TEST_ID).find('option').should('have.length', _constants.currenciesOptions.length);\ncy.wrap(_constants.currenciesOptions).each(currency => {\n  cy.getByTestId(_constants.CURRENCY_INPUT_TEST_ID).contains('option', currency).should('exist');\n});",
+              "err": {},
+              "uuid": "14b9669a-44a4-4213-b3df-8b627770c628",
+              "parentUUID": "a59b3a2e-299e-4391-bbd0-453ae12d707c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "A chave currencies no estado global deve ser um array de siglas puxadas através de uma requisição à API",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: A chave currencies no estado global deve ser um array de siglas puxadas através de uma requisição à API",
+              "timedOut": null,
+              "duration": 573,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@mockFetch').should('be.calledWith', 'https://economia.awesomeapi.com.br/json/all');\ncy.window().its('store').invoke('getState').its('wallet.currencies').should('deep.equal', _constants.currenciesOptions);",
+              "err": {},
+              "uuid": "7cfda38b-3087-46a1-b012-11c628f5a17d",
+              "parentUUID": "a59b3a2e-299e-4391-bbd0-453ae12d707c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para selecionar qual método de pagamento será utilizado",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar qual método de pagamento será utilizado",
+              "timedOut": null,
+              "duration": 601,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.METHOD_INPUT_TEST_ID).find('option').should('have.length', _constants.methodOptions.length);\ncy.wrap(_constants.methodOptions).each(method => {\n  cy.getByTestId(_constants.METHOD_INPUT_TEST_ID).contains('option', method).should('exist');\n});",
+              "err": {},
+              "uuid": "3d37dae1-94dd-4c83-a618-23b12868fa77",
+              "parentUUID": "a59b3a2e-299e-4391-bbd0-453ae12d707c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para selecionar uma categoria (tag) para a despesa.",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar uma categoria (tag) para a despesa.",
+              "timedOut": null,
+              "duration": 636,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TAG_INPUT_TEST_ID).find('option').should('have.length', _constants.tagOptions.length);\ncy.wrap(_constants.tagOptions).each(tag => {\n  cy.getByTestId(_constants.TAG_INPUT_TEST_ID).contains('option', tag).should('exist');\n});",
+              "err": {},
+              "uuid": "43d34d3a-ec09-4e5d-acea-589c3235db6b",
+              "parentUUID": "a59b3a2e-299e-4391-bbd0-453ae12d707c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "afe0716a-e151-4f03-bac7-eaab8c278b0f",
+            "35962b89-0a83-438f-aaea-710cf7b4f4c3",
+            "14b9669a-44a4-4213-b3df-8b627770c628",
+            "7cfda38b-3087-46a1-b012-11c628f5a17d",
+            "3d37dae1-94dd-4c83-a618-23b12868fa77",
+            "43d34d3a-ec09-4e5d-acea-589c3235db6b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4044,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

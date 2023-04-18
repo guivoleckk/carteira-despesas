@@ -1,0 +1,149 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-04-14T20:45:28.307Z",
+    "end": "2023-04-14T20:45:29.683Z",
+    "duration": 1376,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "11125611-0851-460c-ba3c-66cfe9a85d73",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/08.DeleteExpense.cy.js",
+      "file": "cypress/e2e/_requirements/08.DeleteExpense.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5926f006-4a18-4b10-be71-c9b8089bcacf",
+          "title": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"delete-btn\"`",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"delete-btn\"`",
+              "timedOut": null,
+              "duration": 295,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tbody tr').first().find('td').last().find(`button[data-testid=\"${_constants.BTN_DELETE_TEST_ID}\"]`).should('exist');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).should('have.length', 2);",
+              "err": {
+                "message": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `8 - Crie um botão para dele...`",
+                "estack": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `8 - Crie um botão para dele...`\n    at wallet (http://localhost:3000/static/js/bundle.js:1426:10)\n    at <unknown> (http://localhost:3000/static/js/bundle.js:44842:24)\n    at Array.forEach (<anonymous>)\n    at assertReducerShape (http://localhost:3000/static/js/bundle.js:44840:25)\n    at combineReducers (http://localhost:3000/static/js/bundle.js:44895:5)\n    at ./src/redux/reducers/index.js (http://localhost:3000/static/js/bundle.js:1270:75)\n    at options.factory (http://localhost:3000/static/js/bundle.js:49536:31)\n    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:48982:33)\n    at fn (http://localhost:3000/static/js/bundle.js:49193:21)\n    at ./src/redux/store.js (http://localhost:3000/static/js/bundle.js:1493:67)",
+                "diff": null
+              },
+              "uuid": "ac471bc5-214a-4439-97f2-822190428fc1",
+              "parentUUID": "5926f006-4a18-4b10-be71-c9b8089bcacf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global.",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const expectedTableRow = ['Cinco euros', 'Lazer', 'Cartão de crédito', '5.00', 'Euro/Real Brasileiro', '5.13', '25.63', 'Real'];\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click().should('not.exist');\nconst deleteBtn = 1;\ncy.get('tbody tr td').should('have.length', expectedTableRow.length + deleteBtn);\ncy.wrap(expectedTableRow).each(expectedValue => {\n  cy.get('tbody tr td').contains(expectedValue);\n});\nconst expectedExpenses = [_objectSpread(_objectSpread({}, _constants.initialExpenses[1]), {}, {\n  id: 1,\n  exchangeRates: _data.mockData\n})];\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', expectedExpenses);",
+              "err": {},
+              "uuid": "55bf5dc0-bd01-4c9e-b919-ee33dd2b09c5",
+              "parentUUID": "5926f006-4a18-4b10-be71-c9b8089bcacf",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Ao clicar no botão para remover uma despesa, o valor correspondente deve ser subtraído e a despesa total deve ser atualizada no header",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: Ao clicar no botão para remover uma despesa, o valor correspondente deve ser subtraído e a despesa total deve ser atualizada no header",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '73.16');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click();\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '25.63');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click();\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '0.00');",
+              "err": {},
+              "uuid": "cced4104-7675-4d95-88e2-d27336b57c90",
+              "parentUUID": "5926f006-4a18-4b10-be71-c9b8089bcacf",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ac471bc5-214a-4439-97f2-822190428fc1"
+          ],
+          "pending": [],
+          "skipped": [
+            "55bf5dc0-bd01-4c9e-b919-ee33dd2b09c5",
+            "cced4104-7675-4d95-88e2-d27336b57c90"
+          ],
+          "duration": 295,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,987 @@
+{
+  "stats": {
+    "suites": 10,
+    "tests": 21,
+    "passes": 4,
+    "pending": 0,
+    "failures": 17,
+    "start": "2023-04-11T23:07:11.293Z",
+    "end": "2023-04-11T23:07:28.317Z",
+    "duration": 17024,
+    "testsRegistered": 34,
+    "passPercent": 11.76470588235294,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 13,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "cc365104-939a-4da8-b41a-2a6db8394e07",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/00.RunAll.cy.js",
+      "file": "cypress/e2e/_requirements/00.RunAll.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5fa5e87e-6bb4-45f8-b0fd-f594a61c1bd7",
+          "title": "1 - Crie uma página inicial de login com os seguintes campos e características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A rota para esta página deve ser '/'",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: A rota para esta página deve ser '/'",
+              "timedOut": null,
+              "duration": 303,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.location('pathname').should('eq', '/');",
+              "err": {},
+              "uuid": "899dc7ff-de19-4548-87b7-5ba138323062",
+              "parentUUID": "5fa5e87e-6bb4-45f8-b0fd-f594a61c1bd7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Crie um local para que o usuário insira seu email e senha",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: Crie um local para que o usuário insira seu email e senha",
+              "timedOut": null,
+              "duration": 94,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).should('exist');\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).should('exist');",
+              "err": {},
+              "uuid": "a647e959-c7c4-4e8d-b56c-cc1380ff17ce",
+              "parentUUID": "5fa5e87e-6bb4-45f8-b0fd-f594a61c1bd7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Crie um botão com o texto 'Entrar'",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: Crie um botão com o texto 'Entrar'",
+              "timedOut": null,
+              "duration": 72,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains(/Entrar/i).should('exist');",
+              "err": {},
+              "uuid": "e1194c46-9585-4553-83c1-fafd12d239fc",
+              "parentUUID": "5fa5e87e-6bb4-45f8-b0fd-f594a61c1bd7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Realize as seguintes verificações nos campos de email, senha e botão:",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: Realize as seguintes verificações nos campos de email, senha e botão:",
+              "timedOut": null,
+              "duration": 2567,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).type(_constants.INVALID_EMAIL_0);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.INVALID_EMAIL_1);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.INVALID_EMAIL_2);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.INVALID_EMAIL_3);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.VALID_EMAIL);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.INVALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.VALID_EMAIL);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('not.be.disabled');",
+              "err": {},
+              "uuid": "a9f93d48-614c-4f2c-9c8d-693af1c1e49f",
+              "parentUUID": "5fa5e87e-6bb4-45f8-b0fd-f594a61c1bd7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Salve o email no estado da aplicação, com a chave email, assim que o usuário logar.",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: Salve o email no estado da aplicação, com a chave email, assim que o usuário logar.",
+              "timedOut": null,
+              "duration": 540,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "(0, _helperFunctions.logInWithValidCredentials)();\ncy.window().its('store').invoke('getState').its('user.email').should('eq', _constants.VALID_EMAIL);",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at WalletForm.componentDidMount (http://localhost:3000/static/js/bundle.js:279:14)",
+                "diff": null
+              },
+              "uuid": "0ec4dec2-3ad1-4567-a345-1b7081020b2d",
+              "parentUUID": "5fa5e87e-6bb4-45f8-b0fd-f594a61c1bd7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "A rota deve ser mudada para '/carteira' após o clique no botão.",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: A rota deve ser mudada para '/carteira' após o clique no botão.",
+              "timedOut": null,
+              "duration": 604,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "(0, _helperFunctions.logInWithValidCredentials)();\ncy.location('pathname').should('eq', '/carteira');",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at WalletForm.componentDidMount (http://localhost:3000/static/js/bundle.js:279:14)",
+                "diff": null
+              },
+              "uuid": "5cd75945-e875-4f3e-aabb-e1f828a3d9c5",
+              "parentUUID": "5fa5e87e-6bb4-45f8-b0fd-f594a61c1bd7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "899dc7ff-de19-4548-87b7-5ba138323062",
+            "a647e959-c7c4-4e8d-b56c-cc1380ff17ce",
+            "e1194c46-9585-4553-83c1-fafd12d239fc",
+            "a9f93d48-614c-4f2c-9c8d-693af1c1e49f"
+          ],
+          "failures": [
+            "0ec4dec2-3ad1-4567-a345-1b7081020b2d",
+            "5cd75945-e875-4f3e-aabb-e1f828a3d9c5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4180,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "8f3f0222-cc95-450c-ad05-95551aa403a5",
+          "title": "2 - Crie um header para a página de carteira contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Um elemento que exiba o email do usuário que fez login.",
+              "fullTitle": "2 - Crie um header para a página de carteira contendo as seguintes características: Um elemento que exiba o email do usuário que fez login.",
+              "timedOut": null,
+              "duration": 556,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.EMAIL_FIELD_TEST_ID).should('contain', _constants.VALID_EMAIL);",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `2 - Crie um header para a p...`",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `2 - Crie um header para a p...`\n    at WalletForm.componentDidMount (http://localhost:3000/static/js/bundle.js:279:14)",
+                "diff": null
+              },
+              "uuid": "7d84b135-c943-45f6-9cc2-3950664e127d",
+              "parentUUID": "8f3f0222-cc95-450c-ad05-95551aa403a5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Crie um campo com a despesa total gerada pela lista de gastos.",
+              "fullTitle": "2 - Crie um header para a página de carteira contendo as seguintes características: Crie um campo com a despesa total gerada pela lista de gastos.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('contain', '0');",
+              "err": {},
+              "uuid": "95a9cbb6-61b6-4c60-88aa-87fdf46fed3b",
+              "parentUUID": "8f3f0222-cc95-450c-ad05-95551aa403a5",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Crie um campo que mostre que qual câmbio está sendo utilizado, que será neste caso 'BRL'",
+              "fullTitle": "2 - Crie um header para a página de carteira contendo as seguintes características: Crie um campo que mostre que qual câmbio está sendo utilizado, que será neste caso 'BRL'",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.HEADER_CURRENCY_FIELD_TEST_ID).should('contain', 'BRL');",
+              "err": {},
+              "uuid": "00874a14-6cbc-4687-9ce8-60306a2c8ce3",
+              "parentUUID": "8f3f0222-cc95-450c-ad05-95551aa403a5",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "7d84b135-c943-45f6-9cc2-3950664e127d"
+          ],
+          "pending": [],
+          "skipped": [
+            "95a9cbb6-61b6-4c60-88aa-87fdf46fed3b",
+            "00874a14-6cbc-4687-9ce8-60306a2c8ce3"
+          ],
+          "duration": 556,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "bb746045-e234-4eee-9d30-9aed08339add",
+          "title": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Um campo para adicionar o valor da despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para adicionar o valor da despesa",
+              "timedOut": null,
+              "duration": 553,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.VALUE_INPUT_TEST_ID).should('exist');",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `3 - Desenvolva um formulári...`",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `3 - Desenvolva um formulári...`\n    at WalletForm.componentDidMount (http://localhost:3000/static/js/bundle.js:279:14)",
+                "diff": null
+              },
+              "uuid": "168c3d8d-7dc4-4732-9e67-6b72302fa169",
+              "parentUUID": "bb746045-e234-4eee-9d30-9aed08339add",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para adicionar a descrição da despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para adicionar a descrição da despesa",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.DESCRIPTION_INPUT_TEST_ID).should('exist');",
+              "err": {},
+              "uuid": "aa198439-5a21-4e52-b449-03bc82de8919",
+              "parentUUID": "bb746045-e234-4eee-9d30-9aed08339add",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Um campo para selecionar em qual moeda será registrada a despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar em qual moeda será registrada a despesa",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.CURRENCY_INPUT_TEST_ID).find('option').should('have.length', _constants.currenciesOptions.length);\ncy.wrap(_constants.currenciesOptions).each(currency => {\n  cy.getByTestId(_constants.CURRENCY_INPUT_TEST_ID).contains('option', currency).should('exist');\n});",
+              "err": {},
+              "uuid": "b494f7d4-a150-40d0-9fb4-51182c3c2c3c",
+              "parentUUID": "bb746045-e234-4eee-9d30-9aed08339add",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "A chave currencies no estado global deve ser um array de siglas puxadas através de uma requisição à API",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: A chave currencies no estado global deve ser um array de siglas puxadas através de uma requisição à API",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@mockFetch').should('be.calledWith', 'https://economia.awesomeapi.com.br/json/all');\ncy.window().its('store').invoke('getState').its('wallet.currencies').should('deep.equal', _constants.currenciesOptions);",
+              "err": {},
+              "uuid": "eb40d6ae-90df-4db4-879a-b2d1c99f2245",
+              "parentUUID": "bb746045-e234-4eee-9d30-9aed08339add",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Um campo para selecionar qual método de pagamento será utilizado",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar qual método de pagamento será utilizado",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.METHOD_INPUT_TEST_ID).find('option').should('have.length', _constants.methodOptions.length);\ncy.wrap(_constants.methodOptions).each(method => {\n  cy.getByTestId(_constants.METHOD_INPUT_TEST_ID).contains('option', method).should('exist');\n});",
+              "err": {},
+              "uuid": "e909d6fa-89ec-4e54-9a00-b17077bdfa79",
+              "parentUUID": "bb746045-e234-4eee-9d30-9aed08339add",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Um campo para selecionar uma categoria (tag) para a despesa.",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar uma categoria (tag) para a despesa.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TAG_INPUT_TEST_ID).find('option').should('have.length', _constants.tagOptions.length);\ncy.wrap(_constants.tagOptions).each(tag => {\n  cy.getByTestId(_constants.TAG_INPUT_TEST_ID).contains('option', tag).should('exist');\n});",
+              "err": {},
+              "uuid": "af92246d-c3a4-43a9-83cb-1895e2418e7c",
+              "parentUUID": "bb746045-e234-4eee-9d30-9aed08339add",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "168c3d8d-7dc4-4732-9e67-6b72302fa169"
+          ],
+          "pending": [],
+          "skipped": [
+            "aa198439-5a21-4e52-b449-03bc82de8919",
+            "b494f7d4-a150-40d0-9fb4-51182c3c2c3c",
+            "eb40d6ae-90df-4db4-879a-b2d1c99f2245",
+            "e909d6fa-89ec-4e54-9a00-b17077bdfa79",
+            "af92246d-c3a4-43a9-83cb-1895e2418e7c"
+          ],
+          "duration": 553,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "391a2db3-f4c8-482d-bdf8-b1708ce0a4fb",
+          "title": "4 - Salve todas as informações do formulário no estado global",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adiciona uma despesa e verifica se a soma de despesas do header foi atualizada e os inputs voltaram ao valor inicial",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona uma despesa e verifica se a soma de despesas do header foi atualizada e os inputs voltaram ao valor inicial",
+              "timedOut": null,
+              "duration": 583,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\n(0, _helperFunctions.addExpense)(expense);\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '52.28');\ncy.getByTestId(_constants.VALUE_INPUT_TEST_ID).should('have.value', '');\ncy.getByTestId(_constants.DESCRIPTION_INPUT_TEST_ID).should('have.value', '');",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `4 - Salve todas as informaç...`",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `4 - Salve todas as informaç...`\n    at WalletForm.componentDidMount (http://localhost:3000/static/js/bundle.js:279:14)",
+                "diff": null
+              },
+              "uuid": "c791fa1c-86d7-4d2a-9c67-c59d3ce10ec6",
+              "parentUUID": "391a2db3-f4c8-482d-bdf8-b1708ce0a4fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adiciona uma despesa e verifica se a despesa foi salva no estado global",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona uma despesa e verifica se a despesa foi salva no estado global",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\n(0, _helperFunctions.addExpense)(expense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [_objectSpread(_objectSpread({}, expense), {}, {\n  id: 0,\n  exchangeRates: _data.mockData\n})]);",
+              "err": {},
+              "uuid": "0044f688-6724-4d3d-b468-13d49e8bd883",
+              "parentUUID": "391a2db3-f4c8-482d-bdf8-b1708ce0a4fb",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Verifica se a API é chamada a cada vez que o botão 'Adicionar despesa' é clicado",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Verifica se a API é chamada a cada vez que o botão 'Adicionar despesa' é clicado",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\ncy.get('@mockFetch').should('be.calledOnce');\n(0, _helperFunctions.addExpense)(expense);\ncy.get('@mockFetch').should('be.calledTwice');\n(0, _helperFunctions.addExpense)(expense);\ncy.get('@mockFetch').should('be.calledThrice');",
+              "err": {},
+              "uuid": "6e2203f2-cd54-46d9-ab9e-abfb56ba30c2",
+              "parentUUID": "391a2db3-f4c8-482d-bdf8-b1708ce0a4fb",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Adiciona duas despesas e verifica se o estado global e header foram atualizados",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona duas despesas e verifica se o estado global e header foram atualizados",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const firstExpense = {\n  id: 0,\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares',\n  exchangeRates: _data.mockData\n};\n(0, _helperFunctions.addExpense)(firstExpense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [firstExpense]);\nconst secondExpense = {\n  id: 1,\n  value: '20',\n  currency: 'EUR',\n  method: 'Cartão de débito',\n  tag: 'Trabalho',\n  description: 'Vinte euros',\n  exchangeRates: _data.mockData\n};\n(0, _helperFunctions.addExpense)(secondExpense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [firstExpense, secondExpense]);\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '154.82');",
+              "err": {},
+              "uuid": "16c966a6-d620-470e-8be0-189725a20187",
+              "parentUUID": "391a2db3-f4c8-482d-bdf8-b1708ce0a4fb",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "c791fa1c-86d7-4d2a-9c67-c59d3ce10ec6"
+          ],
+          "pending": [],
+          "skipped": [
+            "0044f688-6724-4d3d-b468-13d49e8bd883",
+            "6e2203f2-cd54-46d9-ab9e-abfb56ba30c2",
+            "16c966a6-d620-470e-8be0-189725a20187"
+          ],
+          "duration": 583,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "cd068723-ce87-46e9-b646-d8d6681d9f00",
+          "title": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cobertura de \"Statements\" total deverá ser maior ou igual a 60.",
+              "fullTitle": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação Cobertura de \"Statements\" total deverá ser maior ou igual a 60.",
+              "timedOut": null,
+              "duration": 1086,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.statements.pct', {\n  timeout: 0\n}).should('be.gte', 60.00);",
+              "err": {
+                "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:145912:78)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/_requirements/05.TestCoverage.cy.js:5:7)\n\nFrom Node.js Internals:\n  Error: Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n  \n      at ChildProcess.exithandler (node:child_process:412:12)\n      at ChildProcess.emit (node:events:513:28)\n      at ChildProcess.emit (node:domain:489:12)\n      at maybeClose (node:internal/child_process:1091:16)\n      at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)",
+                "diff": null
+              },
+              "uuid": "3e1bf239-66ec-49f8-8267-a39bd9a9aaa2",
+              "parentUUID": "cd068723-ce87-46e9-b646-d8d6681d9f00",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Functions\" total deverá ser maior ou igual a 60.",
+              "fullTitle": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação Cobertura de \"Functions\" total deverá ser maior ou igual a 60.",
+              "timedOut": null,
+              "duration": 920,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.functions.pct', {\n  timeout: 0\n}).should('be.gte', 60.00);",
+              "err": {
+                "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:145912:78)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/_requirements/05.TestCoverage.cy.js:9:7)\n\nFrom Node.js Internals:\n  Error: Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n  \n      at ChildProcess.exithandler (node:child_process:412:12)\n      at ChildProcess.emit (node:events:513:28)\n      at ChildProcess.emit (node:domain:489:12)\n      at maybeClose (node:internal/child_process:1091:16)\n      at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)",
+                "diff": null
+              },
+              "uuid": "41e5a0c5-540d-4457-a493-275374c06809",
+              "parentUUID": "cd068723-ce87-46e9-b646-d8d6681d9f00",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Branches\" total deverá ser maior ou igual a 60.",
+              "fullTitle": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação Cobertura de \"Branches\" total deverá ser maior ou igual a 60.",
+              "timedOut": null,
+              "duration": 879,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.branches.pct', {\n  timeout: 0\n}).should('be.gte', 60.00);",
+              "err": {
+                "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:145912:78)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/_requirements/05.TestCoverage.cy.js:13:7)\n\nFrom Node.js Internals:\n  Error: Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n  \n      at ChildProcess.exithandler (node:child_process:412:12)\n      at ChildProcess.emit (node:events:513:28)\n      at ChildProcess.emit (node:domain:489:12)\n      at maybeClose (node:internal/child_process:1091:16)\n      at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)",
+                "diff": null
+              },
+              "uuid": "2aac8f55-b6f2-421b-a60f-ad1ff220eb46",
+              "parentUUID": "cd068723-ce87-46e9-b646-d8d6681d9f00",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Lines\" total deverá ser maior ou igual a 60.",
+              "fullTitle": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação Cobertura de \"Lines\" total deverá ser maior ou igual a 60.",
+              "timedOut": null,
+              "duration": 891,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.lines.pct', {\n  timeout: 0\n}).should('be.gte', 60.00);",
+              "err": {
+                "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:145912:78)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/_requirements/05.TestCoverage.cy.js:17:7)\n\nFrom Node.js Internals:\n  Error: Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n  \n      at ChildProcess.exithandler (node:child_process:412:12)\n      at ChildProcess.emit (node:events:513:28)\n      at ChildProcess.emit (node:domain:489:12)\n      at maybeClose (node:internal/child_process:1091:16)\n      at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)",
+                "diff": null
+              },
+              "uuid": "4444476f-34f5-4c94-b526-2ee105a07f47",
+              "parentUUID": "cd068723-ce87-46e9-b646-d8d6681d9f00",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3e1bf239-66ec-49f8-8267-a39bd9a9aaa2",
+            "41e5a0c5-540d-4457-a493-275374c06809",
+            "2aac8f55-b6f2-421b-a60f-ad1ff220eb46",
+            "4444476f-34f5-4c94-b526-2ee105a07f47"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3776,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "9d8e5935-ed76-4a86-8a0c-54932fb217c5",
+          "title": "6 - Desenvolva uma tabela com os gastos contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A tabela deve possuir um cabeçalho com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão",
+              "fullTitle": "6 - Desenvolva uma tabela com os gastos contendo as seguintes características: A tabela deve possuir um cabeçalho com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão",
+              "timedOut": null,
+              "duration": 550,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('th').should('have.length', _constants.tableHeaderList.length);\ncy.wrap(_constants.tableHeaderList).each(header => {\n  cy.get('th').contains(header);\n});",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `6 - Desenvolva uma tabela c...`",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `6 - Desenvolva uma tabela c...`\n    at WalletForm.componentDidMount (http://localhost:3000/static/js/bundle.js:279:14)",
+                "diff": null
+              },
+              "uuid": "148b634e-d878-4b59-90d0-cb75878ab6d9",
+              "parentUUID": "9d8e5935-ed76-4a86-8a0c-54932fb217c5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "148b634e-d878-4b59-90d0-cb75878ab6d9"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 550,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "5ceb2cb7-bfb6-4877-b048-911d5a59c2ba",
+          "title": "7 - Implemente a lógica para que a tabela seja alimentada pelo estado da aplicação",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave expenses que vem do reducer wallet.",
+              "fullTitle": "7 - Implemente a lógica para que a tabela seja alimentada pelo estado da aplicação A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave expenses que vem do reducer wallet.",
+              "timedOut": null,
+              "duration": 597,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const expectedTableRows = [['Dez dólares', 'Trabalho', 'Cartão de débito', '10.00', 'Dólar Americano/Real Brasileiro', '4.75', '47.53', 'Real'], ['Cinco euros', 'Lazer', 'Cartão de crédito', '5.00', 'Euro/Real Brasileiro', '5.13', '25.63', 'Real']];\ncy.get('tbody tr').should('have.length', expectedTableRows.length);\ncy.get('tbody tr').each((row, index) => {\n  cy.wrap(expectedTableRows[index]).each(expectedValue => {\n    cy.get(row).find('td').contains(expectedValue);\n  });\n});",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `7 - Implemente a lógica par...`",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `7 - Implemente a lógica par...`\n    at WalletForm.componentDidMount (http://localhost:3000/static/js/bundle.js:279:14)",
+                "diff": null
+              },
+              "uuid": "748f6852-d296-40f1-be76-814c755e612d",
+              "parentUUID": "5ceb2cb7-bfb6-4877-b048-911d5a59c2ba",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "748f6852-d296-40f1-be76-814c755e612d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 597,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "5d6fbcde-c470-4f50-91ca-133081757ccf",
+          "title": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"delete-btn\"`",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"delete-btn\"`",
+              "timedOut": null,
+              "duration": 572,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tbody tr').first().find('td').last().find(`button[data-testid=\"${_constants.BTN_DELETE_TEST_ID}\"]`).should('exist');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).should('have.length', 2);",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `8 - Crie um botão para dele...`",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `8 - Crie um botão para dele...`\n    at WalletForm.componentDidMount (http://localhost:3000/static/js/bundle.js:279:14)",
+                "diff": null
+              },
+              "uuid": "5d7ae77b-5864-47fe-8926-e3a74bfcf986",
+              "parentUUID": "5d6fbcde-c470-4f50-91ca-133081757ccf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global.",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const expectedTableRow = ['Cinco euros', 'Lazer', 'Cartão de crédito', '5.00', 'Euro/Real Brasileiro', '5.13', '25.63', 'Real'];\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click().should('not.exist');\nconst deleteBtn = 1;\ncy.get('tbody tr td').should('have.length', expectedTableRow.length + deleteBtn);\ncy.wrap(expectedTableRow).each(expectedValue => {\n  cy.get('tbody tr td').contains(expectedValue);\n});\nconst expectedExpenses = [_objectSpread(_objectSpread({}, _constants.initialExpenses[1]), {}, {\n  id: 1,\n  exchangeRates: _data.mockData\n})];\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', expectedExpenses);",
+              "err": {},
+              "uuid": "333083a1-b4cc-4b58-af7b-e22c12b9ab31",
+              "parentUUID": "5d6fbcde-c470-4f50-91ca-133081757ccf",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Ao clicar no botão para remover uma despesa, o valor correspondente deve ser subtraído e a despesa total deve ser atualizada no header",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: Ao clicar no botão para remover uma despesa, o valor correspondente deve ser subtraído e a despesa total deve ser atualizada no header",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '73.16');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click();\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '25.63');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click();\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '0.00');",
+              "err": {},
+              "uuid": "60d0b617-a1ef-4356-be2d-3778809c077a",
+              "parentUUID": "5d6fbcde-c470-4f50-91ca-133081757ccf",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5d7ae77b-5864-47fe-8926-e3a74bfcf986"
+          ],
+          "pending": [],
+          "skipped": [
+            "333083a1-b4cc-4b58-af7b-e22c12b9ab31",
+            "60d0b617-a1ef-4356-be2d-3778809c077a"
+          ],
+          "duration": 572,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "ae4e2ef3-80f6-409d-acb6-14040625e8c2",
+          "title": "9 - Crie um botão para editar uma despesa da tabela contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"edit-btn\"`",
+              "fullTitle": "9 - Crie um botão para editar uma despesa da tabela contendo as seguintes características: O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"edit-btn\"`",
+              "timedOut": null,
+              "duration": 548,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tbody tr').first().find('td').last().find(`button[data-testid=\"${_constants.BTN_EDIT_TEST_ID}\"]`).should('exist');\ncy.getByTestId(_constants.BTN_EDIT_TEST_ID).should('have.length', 2);",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `9 - Crie um botão para edit...`",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > getCurrency is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `9 - Crie um botão para edit...`\n    at WalletForm.componentDidMount (http://localhost:3000/static/js/bundle.js:279:14)",
+                "diff": null
+              },
+              "uuid": "4118debd-473c-42b4-92ec-3a4a5ff5395d",
+              "parentUUID": "ae4e2ef3-80f6-409d-acb6-14040625e8c2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "O botão habilita um formulário para editar a linha da tabela ao ser clicado, após clicar em \"Editar despesa\" a despesa é atualizada e atualiza a soma de despesas no header.",
+              "fullTitle": "9 - Crie um botão para editar uma despesa da tabela contendo as seguintes características: O botão habilita um formulário para editar a linha da tabela ao ser clicado, após clicar em \"Editar despesa\" a despesa é atualizada e atualiza a soma de despesas no header.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.BTN_EDIT_TEST_ID).first().click();\ncy.contains(/Adicionar despesa/i).should('not.exist');\ncy.contains(/Editar despesa/i).should('exist');\n(0, _helperFunctions.editExpense)({\n  value: '200',\n  currency: 'CAD',\n  method: 'Dinheiro',\n  tag: 'Saúde',\n  description: 'Duzentos dólares canadenses'\n});\nconst expectedTableRow = ['Duzentos dólares canadenses', 'Saúde', 'Dinheiro', '200.00', 'Dólar Canadense/Real Brasileiro', '3.76', '751.18', 'Real'];\nconst deleteBtn = 1;\ncy.get('tbody tr').first().find('td').should('have.length', expectedTableRow.length + deleteBtn);\ncy.wrap(expectedTableRow).each(expectedValue => {\n  cy.get('tbody tr').first().find('td').contains(expectedValue);\n});\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '776.81');\nconst expectedExpenses = [{\n  id: 0,\n  value: '200',\n  currency: 'CAD',\n  method: 'Dinheiro',\n  tag: 'Saúde',\n  description: 'Duzentos dólares canadenses',\n  exchangeRates: _data.mockData\n}, _objectSpread(_objectSpread({}, _constants.initialExpenses[1]), {}, {\n  id: 1,\n  exchangeRates: _data.mockData\n})];\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', expectedExpenses);",
+              "err": {},
+              "uuid": "f35facc5-c602-4f20-af73-848e61bb7685",
+              "parentUUID": "ae4e2ef3-80f6-409d-acb6-14040625e8c2",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "4118debd-473c-42b4-92ec-3a4a5ff5395d"
+          ],
+          "pending": [],
+          "skipped": [
+            "f35facc5-c602-4f20-af73-848e61bb7685"
+          ],
+          "duration": 548,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "dec4ccb1-90b2-4529-b5c0-772896b9479f",
+          "title": "10 - Desenvolva testes para atingir 90% de cobertura total da aplicação",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cobertura de \"Statements\" total deverá ser maior ou igual a 90.",
+              "fullTitle": "10 - Desenvolva testes para atingir 90% de cobertura total da aplicação Cobertura de \"Statements\" total deverá ser maior ou igual a 90.",
+              "timedOut": null,
+              "duration": 923,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.statements.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);",
+              "err": {
+                "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:145912:78)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/_requirements/10.TestCoverage.cy.js:5:7)\n\nFrom Node.js Internals:\n  Error: Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n  \n      at ChildProcess.exithandler (node:child_process:412:12)\n      at ChildProcess.emit (node:events:513:28)\n      at ChildProcess.emit (node:domain:489:12)\n      at maybeClose (node:internal/child_process:1091:16)\n      at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)",
+                "diff": null
+              },
+              "uuid": "480b72a6-1d16-4077-88f3-2430fb07b22e",
+              "parentUUID": "dec4ccb1-90b2-4529-b5c0-772896b9479f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Functions\" total deverá ser maior ou igual a 90.",
+              "fullTitle": "10 - Desenvolva testes para atingir 90% de cobertura total da aplicação Cobertura de \"Functions\" total deverá ser maior ou igual a 90.",
+              "timedOut": null,
+              "duration": 928,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.functions.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);",
+              "err": {
+                "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:145912:78)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/_requirements/10.TestCoverage.cy.js:9:7)\n\nFrom Node.js Internals:\n  Error: Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n  \n      at ChildProcess.exithandler (node:child_process:412:12)\n      at ChildProcess.emit (node:events:513:28)\n      at ChildProcess.emit (node:domain:489:12)\n      at maybeClose (node:internal/child_process:1091:16)\n      at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)",
+                "diff": null
+              },
+              "uuid": "5f7e4b50-5bb0-4781-b230-f11c12eb19d6",
+              "parentUUID": "dec4ccb1-90b2-4529-b5c0-772896b9479f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Branches\" total deverá ser maior ou igual a 90.",
+              "fullTitle": "10 - Desenvolva testes para atingir 90% de cobertura total da aplicação Cobertura de \"Branches\" total deverá ser maior ou igual a 90.",
+              "timedOut": null,
+              "duration": 961,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.branches.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);",
+              "err": {
+                "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:145912:78)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/_requirements/10.TestCoverage.cy.js:13:7)\n\nFrom Node.js Internals:\n  Error: Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n  \n      at ChildProcess.exithandler (node:child_process:412:12)\n      at ChildProcess.emit (node:events:513:28)\n      at ChildProcess.emit (node:domain:489:12)\n      at maybeClose (node:internal/child_process:1091:16)\n      at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)",
+                "diff": null
+              },
+              "uuid": "f63d0b92-1583-45b2-bdcf-4670ecc4196c",
+              "parentUUID": "dec4ccb1-90b2-4529-b5c0-772896b9479f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Lines\" total deverá ser maior ou igual a 90.",
+              "fullTitle": "10 - Desenvolva testes para atingir 90% de cobertura total da aplicação Cobertura de \"Lines\" total deverá ser maior ou igual a 90.",
+              "timedOut": null,
+              "duration": 947,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.lines.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);",
+              "err": {
+                "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:145912:78)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/_requirements/10.TestCoverage.cy.js:17:7)\n\nFrom Node.js Internals:\n  Error: Command failed: npm run test-coverage -- --coverageReporters=\"json-summary\" --testFailureExitCode=0\n  \n      at ChildProcess.exithandler (node:child_process:412:12)\n      at ChildProcess.emit (node:events:513:28)\n      at ChildProcess.emit (node:domain:489:12)\n      at maybeClose (node:internal/child_process:1091:16)\n      at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)",
+                "diff": null
+              },
+              "uuid": "2e1d0e45-e6cd-44a1-85bc-ccbfd019e4e3",
+              "parentUUID": "dec4ccb1-90b2-4529-b5c0-772896b9479f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "480b72a6-1d16-4077-88f3-2430fb07b22e",
+            "5f7e4b50-5bb0-4781-b230-f11c12eb19d6",
+            "f63d0b92-1583-45b2-bdcf-4670ecc4196c",
+            "2e1d0e45-e6cd-44a1-85bc-ccbfd019e4e3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3759,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

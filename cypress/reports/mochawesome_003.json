@@ -1,0 +1,225 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 0,
+    "pending": 0,
+    "failures": 6,
+    "start": "2023-04-11T18:32:13.114Z",
+    "end": "2023-04-11T18:33:18.180Z",
+    "duration": 65066,
+    "testsRegistered": 6,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c0994a94-ceb9-4a1c-b7cd-902b165254a8",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/03.ExpensesForm.cy.js",
+      "file": "cypress/e2e/_requirements/03.ExpensesForm.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cd5f0718-241d-4d1d-b76d-faa622a533cb",
+          "title": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Um campo para adicionar o valor da despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para adicionar o valor da despesa",
+              "timedOut": null,
+              "duration": 10925,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.VALUE_INPUT_TEST_ID).should('exist');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-testid=\"value-input\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-testid=\"value-input\"]`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/_requirements/03.ExpensesForm.cy.js:23:40)",
+                "diff": null
+              },
+              "uuid": "e45ea0a5-977b-4633-9070-adca7c49e168",
+              "parentUUID": "cd5f0718-241d-4d1d-b76d-faa622a533cb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para adicionar a descrição da despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para adicionar a descrição da despesa",
+              "timedOut": null,
+              "duration": 10604,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.DESCRIPTION_INPUT_TEST_ID).should('exist');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-testid=\"description-input\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-testid=\"description-input\"]`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/_requirements/03.ExpensesForm.cy.js:27:46)",
+                "diff": null
+              },
+              "uuid": "8a8017c1-25e2-4b57-841a-e3459d5fd951",
+              "parentUUID": "cd5f0718-241d-4d1d-b76d-faa622a533cb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para selecionar em qual moeda será registrada a despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar em qual moeda será registrada a despesa",
+              "timedOut": null,
+              "duration": 10575,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.CURRENCY_INPUT_TEST_ID).find('option').should('have.length', _constants.currenciesOptions.length);\ncy.wrap(_constants.currenciesOptions).each(currency => {\n  cy.getByTestId(_constants.CURRENCY_INPUT_TEST_ID).contains('option', currency).should('exist');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-testid=\"currency-input\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-testid=\"currency-input\"]`, but never found it.\n    at Context.eval (webpack:///./cypress/support/commands.js:27:62)",
+                "diff": null
+              },
+              "uuid": "c5033d55-ebd5-4601-b73f-91773699239b",
+              "parentUUID": "cd5f0718-241d-4d1d-b76d-faa622a533cb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "A chave currencies no estado global deve ser um array de siglas puxadas através de uma requisição à API",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: A chave currencies no estado global deve ser um array de siglas puxadas através de uma requisição à API",
+              "timedOut": null,
+              "duration": 10597,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@mockFetch').should('be.calledWith', 'https://economia.awesomeapi.com.br/json/all');\ncy.window().its('store').invoke('getState').its('wallet.currencies').should('deep.equal', _constants.currenciesOptions);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: expected mockFetch to have been called with arguments \"https://economia.awesomeapi.com.br/json/all\", but it was never called",
+                "estack": "AssertionError: Timed out retrying after 10000ms: expected mockFetch to have been called with arguments \"https://economia.awesomeapi.com.br/json/all\", but it was never called\n    at Context.eval (webpack:///./cypress/e2e/_requirements/03.ExpensesForm.cy.js:39:25)",
+                "diff": null
+              },
+              "uuid": "5ddd8824-c67e-4b01-9295-f4a7e90fadb2",
+              "parentUUID": "cd5f0718-241d-4d1d-b76d-faa622a533cb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para selecionar qual método de pagamento será utilizado",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar qual método de pagamento será utilizado",
+              "timedOut": null,
+              "duration": 10580,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.METHOD_INPUT_TEST_ID).find('option').should('have.length', _constants.methodOptions.length);\ncy.wrap(_constants.methodOptions).each(method => {\n  cy.getByTestId(_constants.METHOD_INPUT_TEST_ID).contains('option', method).should('exist');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-testid=\"method-input\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-testid=\"method-input\"]`, but never found it.\n    at Context.eval (webpack:///./cypress/support/commands.js:27:62)",
+                "diff": null
+              },
+              "uuid": "dde53bbc-7a8a-404b-a0e0-d76c59788091",
+              "parentUUID": "cd5f0718-241d-4d1d-b76d-faa622a533cb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para selecionar uma categoria (tag) para a despesa.",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar uma categoria (tag) para a despesa.",
+              "timedOut": null,
+              "duration": 10601,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TAG_INPUT_TEST_ID).find('option').should('have.length', _constants.tagOptions.length);\ncy.wrap(_constants.tagOptions).each(tag => {\n  cy.getByTestId(_constants.TAG_INPUT_TEST_ID).contains('option', tag).should('exist');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-testid=\"tag-input\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-testid=\"tag-input\"]`, but never found it.\n    at Context.eval (webpack:///./cypress/support/commands.js:27:62)",
+                "diff": null
+              },
+              "uuid": "792f2901-fb05-4d50-863f-1d9988c3a0b1",
+              "parentUUID": "cd5f0718-241d-4d1d-b76d-faa622a533cb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e45ea0a5-977b-4633-9070-adca7c49e168",
+            "8a8017c1-25e2-4b57-841a-e3459d5fd951",
+            "c5033d55-ebd5-4601-b73f-91773699239b",
+            "5ddd8824-c67e-4b01-9295-f4a7e90fadb2",
+            "dde53bbc-7a8a-404b-a0e0-d76c59788091",
+            "792f2901-fb05-4d50-863f-1d9988c3a0b1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 63882,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

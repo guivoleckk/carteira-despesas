@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-04-12T19:13:47.085Z",
+    "end": "2023-04-12T19:13:52.784Z",
+    "duration": 5699,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "81952e00-57f2-4e54-b1dc-2e450dbfaddc",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/07.ExpenseGlobalState.cy.js",
+      "file": "cypress/e2e/_requirements/07.ExpenseGlobalState.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d7de4bcb-da90-46d4-bc76-1c1174ce3788",
+          "title": "7 - Implemente a lógica para que a tabela seja alimentada pelo estado da aplicação",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave expenses que vem do reducer wallet.",
+              "fullTitle": "7 - Implemente a lógica para que a tabela seja alimentada pelo estado da aplicação A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave expenses que vem do reducer wallet.",
+              "timedOut": null,
+              "duration": 4046,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const expectedTableRows = [['Dez dólares', 'Trabalho', 'Cartão de débito', '10.00', 'Dólar Americano/Real Brasileiro', '4.75', '47.53', 'Real'], ['Cinco euros', 'Lazer', 'Cartão de crédito', '5.00', 'Euro/Real Brasileiro', '5.13', '25.63', 'Real']];\ncy.get('tbody tr').should('have.length', expectedTableRows.length);\ncy.get('tbody tr').each((row, index) => {\n  cy.wrap(expectedTableRows[index]).each(expectedValue => {\n    cy.get(row).find('td').contains(expectedValue);\n  });\n});",
+              "err": {},
+              "uuid": "5a2091b2-5aad-4be2-bc6e-e129b3f2f5c6",
+              "parentUUID": "d7de4bcb-da90-46d4-bc76-1c1174ce3788",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5a2091b2-5aad-4be2-bc6e-e129b3f2f5c6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4046,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

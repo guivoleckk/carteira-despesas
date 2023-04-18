@@ -1,0 +1,153 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2023-04-12T08:53:03.671Z",
+    "end": "2023-04-12T08:53:30.503Z",
+    "duration": 26832,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3eb22870-377c-4d8c-bd4c-37296333a300",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/08.DeleteExpense.cy.js",
+      "file": "cypress/e2e/_requirements/08.DeleteExpense.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ec1560cb-86d0-468a-964f-b1e424a1d65c",
+          "title": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"delete-btn\"`",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"delete-btn\"`",
+              "timedOut": null,
+              "duration": 2822,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tbody tr').first().find('td').last().find(`button[data-testid=\"${_constants.BTN_DELETE_TEST_ID}\"]`).should('exist');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).should('have.length', 2);",
+              "err": {},
+              "uuid": "3ea52ba9-fda8-49bd-bc03-67c777aded0d",
+              "parentUUID": "ec1560cb-86d0-468a-964f-b1e424a1d65c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global.",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global.",
+              "timedOut": null,
+              "duration": 12472,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const expectedTableRow = ['Cinco euros', 'Lazer', 'Cartão de crédito', '5.00', 'Euro/Real Brasileiro', '5.13', '25.63', 'Real'];\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click().should('not.exist');\nconst deleteBtn = 1;\ncy.get('tbody tr td').should('have.length', expectedTableRow.length + deleteBtn);\ncy.wrap(expectedTableRow).each(expectedValue => {\n  cy.get('tbody tr td').contains(expectedValue);\n});\nconst expectedExpenses = [_objectSpread(_objectSpread({}, _constants.initialExpenses[1]), {}, {\n  id: 1,\n  exchangeRates: _data.mockData\n})];\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', expectedExpenses);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: '5.00' within the element: [ <td>, 8 more... ] but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: '5.00' within the element: [ <td>, 8 more... ] but never did.\n    at Context.eval (webpack:///./cypress/e2e/_requirements/08.DeleteExpense.cy.js:39:28)",
+                "diff": null
+              },
+              "uuid": "06cfdd56-343e-403b-bd0a-612a55e102eb",
+              "parentUUID": "ec1560cb-86d0-468a-964f-b1e424a1d65c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Ao clicar no botão para remover uma despesa, o valor correspondente deve ser subtraído e a despesa total deve ser atualizada no header",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: Ao clicar no botão para remover uma despesa, o valor correspondente deve ser subtraído e a despesa total deve ser atualizada no header",
+              "timedOut": null,
+              "duration": 10384,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '73.16');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click();\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '25.63');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click();\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '0.00');",
+              "err": {
+                "message": "CypressError: Timed out retrying after 10000ms: `cy.clear()` failed because this element:\n\n`<input data-testid=\"email-input\" name=\"email\" value=\"\">`\n\nis being covered by another element:\n\n`<iframe id=\"webpack-dev-server-client-overlay\" src=\"about:blank\" style=\"position: fixed; inset: 0px; width: 100vw; height: 100vh; border: none; z-index: 2147483647;\"></iframe>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `8 - Crie um botão para dele...`",
+                "estack": "CypressError: Timed out retrying after 10000ms: `cy.clear()` failed because this element:\n\n`<input data-testid=\"email-input\" name=\"email\" value=\"\">`\n\nis being covered by another element:\n\n`<iframe id=\"webpack-dev-server-client-overlay\" src=\"about:blank\" style=\"position: fixed; inset: 0px; width: 100vw; height: 100vh; border: none; z-index: 2147483647;\"></iframe>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `8 - Crie um botão para dele...`\n    at $Cy.ensureDescendents (http://localhost:3000/__cypress/runner/cypress_runner.js:147749:78)\n    at ensureDescendents (http://localhost:3000/__cypress/runner/cypress_runner.js:133193:8)\n    at ensureDescendentsAndScroll (http://localhost:3000/__cypress/runner/cypress_runner.js:133200:14)\n    at ensureElIsNotCovered (http://localhost:3000/__cypress/runner/cypress_runner.js:133332:5)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:133522:52)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:133546:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:8592:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:152819:65)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:152244:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:9435:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:9379:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:10993:46)\nFrom Your Spec Code:\n    at logInWithValidCredentials (webpack:///./cypress/utils/helperFunctions.js:60:38)\n    at Context.eval (webpack:///./cypress/e2e/_requirements/08.DeleteExpense.cy.js:16:4)",
+                "diff": null
+              },
+              "uuid": "ae744ce0-4b9a-4868-ae1f-4b321b89eb96",
+              "parentUUID": "ec1560cb-86d0-468a-964f-b1e424a1d65c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3ea52ba9-fda8-49bd-bc03-67c777aded0d"
+          ],
+          "failures": [
+            "06cfdd56-343e-403b-bd0a-612a55e102eb",
+            "ae744ce0-4b9a-4868-ae1f-4b321b89eb96"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 25678,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

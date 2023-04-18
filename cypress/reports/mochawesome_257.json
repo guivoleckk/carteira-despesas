@@ -1,0 +1,983 @@
+{
+  "stats": {
+    "suites": 10,
+    "tests": 16,
+    "passes": 0,
+    "pending": 0,
+    "failures": 16,
+    "start": "2023-04-14T20:45:05.485Z",
+    "end": "2023-04-14T20:45:11.043Z",
+    "duration": 5558,
+    "testsRegistered": 34,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 18,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "9f65ebde-ea1d-4f44-86a3-6203efa7ccb0",
+      "title": "",
+      "fullFile": "cypress/e2e/_requirements/00.RunAll.cy.js",
+      "file": "cypress/e2e/_requirements/00.RunAll.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9c63757a-71dc-4898-99d7-9648ac22299f",
+          "title": "1 - Crie uma página inicial de login com os seguintes campos e características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A rota para esta página deve ser '/'",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: A rota para esta página deve ser '/'",
+              "timedOut": null,
+              "duration": 310,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.location('pathname').should('eq', '/');",
+              "err": {
+                "message": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `1 - Crie uma página inicial...`",
+                "estack": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `1 - Crie uma página inicial...`\n    at wallet (http://localhost:3000/static/js/bundle.js:1426:10)\n    at <unknown> (http://localhost:3000/static/js/bundle.js:44842:24)\n    at Array.forEach (<anonymous>)\n    at assertReducerShape (http://localhost:3000/static/js/bundle.js:44840:25)\n    at combineReducers (http://localhost:3000/static/js/bundle.js:44895:5)\n    at ./src/redux/reducers/index.js (http://localhost:3000/static/js/bundle.js:1270:75)\n    at options.factory (http://localhost:3000/static/js/bundle.js:49536:31)\n    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:48982:33)\n    at fn (http://localhost:3000/static/js/bundle.js:49193:21)\n    at ./src/redux/store.js (http://localhost:3000/static/js/bundle.js:1493:67)",
+                "diff": null
+              },
+              "uuid": "fa79b635-45c0-49e8-9f57-313f451a4f12",
+              "parentUUID": "9c63757a-71dc-4898-99d7-9648ac22299f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Crie um local para que o usuário insira seu email e senha",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: Crie um local para que o usuário insira seu email e senha",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).should('exist');\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).should('exist');",
+              "err": {},
+              "uuid": "0aadfe92-fb08-4e38-9881-010e7b9dcd37",
+              "parentUUID": "9c63757a-71dc-4898-99d7-9648ac22299f",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Crie um botão com o texto 'Entrar'",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: Crie um botão com o texto 'Entrar'",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains(/Entrar/i).should('exist');",
+              "err": {},
+              "uuid": "85c3e7f2-cfbb-4fed-86df-d4067c1f4198",
+              "parentUUID": "9c63757a-71dc-4898-99d7-9648ac22299f",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Realize as seguintes verificações nos campos de email, senha e botão:",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: Realize as seguintes verificações nos campos de email, senha e botão:",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).type(_constants.INVALID_EMAIL_0);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.INVALID_EMAIL_1);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.INVALID_EMAIL_2);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.INVALID_EMAIL_3);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.VALID_EMAIL);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.INVALID_PASSWORD);\ncy.contains(/Entrar/i).should('be.disabled');\ncy.getByTestId(_constants.EMAIL_INPUT_TEST_ID).clear().type(_constants.VALID_EMAIL);\ncy.getByTestId(_constants.PASSWORD_INPUT_TEST_ID).clear().type(_constants.VALID_PASSWORD);\ncy.contains(/Entrar/i).should('not.be.disabled');",
+              "err": {},
+              "uuid": "d5a76b41-21fa-4bc4-9f94-fb5bda39b08e",
+              "parentUUID": "9c63757a-71dc-4898-99d7-9648ac22299f",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Salve o email no estado da aplicação, com a chave email, assim que o usuário logar.",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: Salve o email no estado da aplicação, com a chave email, assim que o usuário logar.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _helperFunctions.logInWithValidCredentials)();\ncy.window().its('store').invoke('getState').its('user.email').should('eq', _constants.VALID_EMAIL);",
+              "err": {},
+              "uuid": "7b260aca-5458-4722-b763-fa73af5a5407",
+              "parentUUID": "9c63757a-71dc-4898-99d7-9648ac22299f",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "A rota deve ser mudada para '/carteira' após o clique no botão.",
+              "fullTitle": "1 - Crie uma página inicial de login com os seguintes campos e características: A rota deve ser mudada para '/carteira' após o clique no botão.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _helperFunctions.logInWithValidCredentials)();\ncy.location('pathname').should('eq', '/carteira');",
+              "err": {},
+              "uuid": "455030e3-88fb-442c-a6b1-a57e634b2dbe",
+              "parentUUID": "9c63757a-71dc-4898-99d7-9648ac22299f",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "fa79b635-45c0-49e8-9f57-313f451a4f12"
+          ],
+          "pending": [],
+          "skipped": [
+            "0aadfe92-fb08-4e38-9881-010e7b9dcd37",
+            "85c3e7f2-cfbb-4fed-86df-d4067c1f4198",
+            "d5a76b41-21fa-4bc4-9f94-fb5bda39b08e",
+            "7b260aca-5458-4722-b763-fa73af5a5407",
+            "455030e3-88fb-442c-a6b1-a57e634b2dbe"
+          ],
+          "duration": 310,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "7a209b52-38a3-4897-9ab3-481224c0fe78",
+          "title": "2 - Crie um header para a página de carteira contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Um elemento que exiba o email do usuário que fez login.",
+              "fullTitle": "2 - Crie um header para a página de carteira contendo as seguintes características: Um elemento que exiba o email do usuário que fez login.",
+              "timedOut": null,
+              "duration": 120,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.EMAIL_FIELD_TEST_ID).should('contain', _constants.VALID_EMAIL);",
+              "err": {
+                "message": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `2 - Crie um header para a p...`",
+                "estack": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `2 - Crie um header para a p...`\n    at wallet (http://localhost:3000/static/js/bundle.js:1426:10)\n    at <unknown> (http://localhost:3000/static/js/bundle.js:44842:24)\n    at Array.forEach (<anonymous>)\n    at assertReducerShape (http://localhost:3000/static/js/bundle.js:44840:25)\n    at combineReducers (http://localhost:3000/static/js/bundle.js:44895:5)\n    at ./src/redux/reducers/index.js (http://localhost:3000/static/js/bundle.js:1270:75)\n    at options.factory (http://localhost:3000/static/js/bundle.js:49536:31)\n    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:48982:33)\n    at fn (http://localhost:3000/static/js/bundle.js:49193:21)\n    at ./src/redux/store.js (http://localhost:3000/static/js/bundle.js:1493:67)",
+                "diff": null
+              },
+              "uuid": "7db21d67-373c-4b72-892d-c7e3d744525e",
+              "parentUUID": "7a209b52-38a3-4897-9ab3-481224c0fe78",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Crie um campo com a despesa total gerada pela lista de gastos.",
+              "fullTitle": "2 - Crie um header para a página de carteira contendo as seguintes características: Crie um campo com a despesa total gerada pela lista de gastos.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('contain', '0');",
+              "err": {},
+              "uuid": "b2c9ead3-2634-4fdc-86a6-f2653961f1f2",
+              "parentUUID": "7a209b52-38a3-4897-9ab3-481224c0fe78",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Crie um campo que mostre que qual câmbio está sendo utilizado, que será neste caso 'BRL'",
+              "fullTitle": "2 - Crie um header para a página de carteira contendo as seguintes características: Crie um campo que mostre que qual câmbio está sendo utilizado, que será neste caso 'BRL'",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.HEADER_CURRENCY_FIELD_TEST_ID).should('contain', 'BRL');",
+              "err": {},
+              "uuid": "a81f9861-d6c2-4e99-943f-6677745255f8",
+              "parentUUID": "7a209b52-38a3-4897-9ab3-481224c0fe78",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "7db21d67-373c-4b72-892d-c7e3d744525e"
+          ],
+          "pending": [],
+          "skipped": [
+            "b2c9ead3-2634-4fdc-86a6-f2653961f1f2",
+            "a81f9861-d6c2-4e99-943f-6677745255f8"
+          ],
+          "duration": 120,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "1c29f4e2-8e8f-4967-8dc6-6c9fea5122ac",
+          "title": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Um campo para adicionar o valor da despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para adicionar o valor da despesa",
+              "timedOut": null,
+              "duration": 61,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.VALUE_INPUT_TEST_ID).should('exist');",
+              "err": {
+                "message": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `3 - Desenvolva um formulári...`",
+                "estack": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `3 - Desenvolva um formulári...`\n    at wallet (http://localhost:3000/static/js/bundle.js:1426:10)\n    at <unknown> (http://localhost:3000/static/js/bundle.js:44842:24)\n    at Array.forEach (<anonymous>)\n    at assertReducerShape (http://localhost:3000/static/js/bundle.js:44840:25)\n    at combineReducers (http://localhost:3000/static/js/bundle.js:44895:5)\n    at ./src/redux/reducers/index.js (http://localhost:3000/static/js/bundle.js:1270:75)\n    at options.factory (http://localhost:3000/static/js/bundle.js:49536:31)\n    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:48982:33)\n    at fn (http://localhost:3000/static/js/bundle.js:49193:21)\n    at ./src/redux/store.js (http://localhost:3000/static/js/bundle.js:1493:67)",
+                "diff": null
+              },
+              "uuid": "6c889c5e-26d3-46a4-bdae-4788145f52c1",
+              "parentUUID": "1c29f4e2-8e8f-4967-8dc6-6c9fea5122ac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para adicionar a descrição da despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para adicionar a descrição da despesa",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.DESCRIPTION_INPUT_TEST_ID).should('exist');",
+              "err": {},
+              "uuid": "f02d41db-614b-460d-923d-14749185e3d4",
+              "parentUUID": "1c29f4e2-8e8f-4967-8dc6-6c9fea5122ac",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Um campo para selecionar em qual moeda será registrada a despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar em qual moeda será registrada a despesa",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.CURRENCY_INPUT_TEST_ID).find('option').should('have.length', _constants.currenciesOptions.length);\ncy.wrap(_constants.currenciesOptions).each(currency => {\n  cy.getByTestId(_constants.CURRENCY_INPUT_TEST_ID).contains('option', currency).should('exist');\n});",
+              "err": {},
+              "uuid": "eea88894-7d31-4d80-a5a2-dbea4029ff0d",
+              "parentUUID": "1c29f4e2-8e8f-4967-8dc6-6c9fea5122ac",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "A chave currencies no estado global deve ser um array de siglas puxadas através de uma requisição à API",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: A chave currencies no estado global deve ser um array de siglas puxadas através de uma requisição à API",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@mockFetch').should('be.calledWith', 'https://economia.awesomeapi.com.br/json/all');\ncy.window().its('store').invoke('getState').its('wallet.currencies').should('deep.equal', _constants.currenciesOptions);",
+              "err": {},
+              "uuid": "5727ca10-f8e8-4f8e-9d79-715241cf66ac",
+              "parentUUID": "1c29f4e2-8e8f-4967-8dc6-6c9fea5122ac",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Um campo para selecionar qual método de pagamento será utilizado",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar qual método de pagamento será utilizado",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.METHOD_INPUT_TEST_ID).find('option').should('have.length', _constants.methodOptions.length);\ncy.wrap(_constants.methodOptions).each(method => {\n  cy.getByTestId(_constants.METHOD_INPUT_TEST_ID).contains('option', method).should('exist');\n});",
+              "err": {},
+              "uuid": "5ec1360b-0a4b-45c8-b286-84c1c69261f1",
+              "parentUUID": "1c29f4e2-8e8f-4967-8dc6-6c9fea5122ac",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Um campo para selecionar uma categoria (tag) para a despesa.",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar uma categoria (tag) para a despesa.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TAG_INPUT_TEST_ID).find('option').should('have.length', _constants.tagOptions.length);\ncy.wrap(_constants.tagOptions).each(tag => {\n  cy.getByTestId(_constants.TAG_INPUT_TEST_ID).contains('option', tag).should('exist');\n});",
+              "err": {},
+              "uuid": "562a71c8-4e2f-455b-a108-79adf5e80556",
+              "parentUUID": "1c29f4e2-8e8f-4967-8dc6-6c9fea5122ac",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "6c889c5e-26d3-46a4-bdae-4788145f52c1"
+          ],
+          "pending": [],
+          "skipped": [
+            "f02d41db-614b-460d-923d-14749185e3d4",
+            "eea88894-7d31-4d80-a5a2-dbea4029ff0d",
+            "5727ca10-f8e8-4f8e-9d79-715241cf66ac",
+            "5ec1360b-0a4b-45c8-b286-84c1c69261f1",
+            "562a71c8-4e2f-455b-a108-79adf5e80556"
+          ],
+          "duration": 61,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "a39024d2-62c6-4f93-a7b1-bd2e955ed80e",
+          "title": "4 - Salve todas as informações do formulário no estado global",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adiciona uma despesa e verifica se a soma de despesas do header foi atualizada e os inputs voltaram ao valor inicial",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona uma despesa e verifica se a soma de despesas do header foi atualizada e os inputs voltaram ao valor inicial",
+              "timedOut": null,
+              "duration": 99,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\n(0, _helperFunctions.addExpense)(expense);\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '52.28');\ncy.getByTestId(_constants.VALUE_INPUT_TEST_ID).should('have.value', '');\ncy.getByTestId(_constants.DESCRIPTION_INPUT_TEST_ID).should('have.value', '');",
+              "err": {
+                "message": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `4 - Salve todas as informaç...`",
+                "estack": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `4 - Salve todas as informaç...`\n    at wallet (http://localhost:3000/static/js/bundle.js:1426:10)\n    at <unknown> (http://localhost:3000/static/js/bundle.js:44842:24)\n    at Array.forEach (<anonymous>)\n    at assertReducerShape (http://localhost:3000/static/js/bundle.js:44840:25)\n    at combineReducers (http://localhost:3000/static/js/bundle.js:44895:5)\n    at ./src/redux/reducers/index.js (http://localhost:3000/static/js/bundle.js:1270:75)\n    at options.factory (http://localhost:3000/static/js/bundle.js:49536:31)\n    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:48982:33)\n    at fn (http://localhost:3000/static/js/bundle.js:49193:21)\n    at ./src/redux/store.js (http://localhost:3000/static/js/bundle.js:1493:67)",
+                "diff": null
+              },
+              "uuid": "07f372ac-cd27-4705-bdb1-2a41df4c59b1",
+              "parentUUID": "a39024d2-62c6-4f93-a7b1-bd2e955ed80e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adiciona uma despesa e verifica se a despesa foi salva no estado global",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona uma despesa e verifica se a despesa foi salva no estado global",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\n(0, _helperFunctions.addExpense)(expense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [_objectSpread(_objectSpread({}, expense), {}, {\n  id: 0,\n  exchangeRates: _data.mockData\n})]);",
+              "err": {},
+              "uuid": "603385cc-9ace-4e10-bf32-18dabf519f84",
+              "parentUUID": "a39024d2-62c6-4f93-a7b1-bd2e955ed80e",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Verifica se a API é chamada a cada vez que o botão 'Adicionar despesa' é clicado",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Verifica se a API é chamada a cada vez que o botão 'Adicionar despesa' é clicado",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\ncy.get('@mockFetch').should('be.calledOnce');\n(0, _helperFunctions.addExpense)(expense);\ncy.get('@mockFetch').should('be.calledTwice');\n(0, _helperFunctions.addExpense)(expense);\ncy.get('@mockFetch').should('be.calledThrice');",
+              "err": {},
+              "uuid": "f13b7b16-0e2e-45a5-a43d-889dcd67327f",
+              "parentUUID": "a39024d2-62c6-4f93-a7b1-bd2e955ed80e",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Adiciona duas despesas e verifica se o estado global e header foram atualizados",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona duas despesas e verifica se o estado global e header foram atualizados",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const firstExpense = {\n  id: 0,\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares',\n  exchangeRates: _data.mockData\n};\n(0, _helperFunctions.addExpense)(firstExpense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [firstExpense]);\nconst secondExpense = {\n  id: 1,\n  value: '20',\n  currency: 'EUR',\n  method: 'Cartão de débito',\n  tag: 'Trabalho',\n  description: 'Vinte euros',\n  exchangeRates: _data.mockData\n};\n(0, _helperFunctions.addExpense)(secondExpense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [firstExpense, secondExpense]);\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '154.82');",
+              "err": {},
+              "uuid": "80c16507-664d-4a36-a970-b8a3f6ae89ee",
+              "parentUUID": "a39024d2-62c6-4f93-a7b1-bd2e955ed80e",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "07f372ac-cd27-4705-bdb1-2a41df4c59b1"
+          ],
+          "pending": [],
+          "skipped": [
+            "603385cc-9ace-4e10-bf32-18dabf519f84",
+            "f13b7b16-0e2e-45a5-a43d-889dcd67327f",
+            "80c16507-664d-4a36-a970-b8a3f6ae89ee"
+          ],
+          "duration": 99,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "e87148c4-6af7-4fdb-8b65-ef22edb9349c",
+          "title": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cobertura de \"Statements\" total deverá ser maior ou igual a 60.",
+              "fullTitle": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação Cobertura de \"Statements\" total deverá ser maior ou igual a 60.",
+              "timedOut": null,
+              "duration": 2871,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.statements.pct', {\n  timeout: 0\n}).should('be.gte', 60.00);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 0ms: expected 22.76 to be at least 60",
+                "estack": "AssertionError: Timed out retrying after 0ms: expected 22.76 to be at least 60\n    at Context.eval (webpack:///./cypress/e2e/_requirements/05.TestCoverage.cy.js:5:80)",
+                "diff": "- 22.76\n+ 60\n"
+              },
+              "uuid": "31c9d8a9-e81b-4364-b3d6-7ae780db3c66",
+              "parentUUID": "e87148c4-6af7-4fdb-8b65-ef22edb9349c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Functions\" total deverá ser maior ou igual a 60.",
+              "fullTitle": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação Cobertura de \"Functions\" total deverá ser maior ou igual a 60.",
+              "timedOut": null,
+              "duration": 43,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.functions.pct', {\n  timeout: 0\n}).should('be.gte', 60.00);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 0ms: expected 5 to be at least 60",
+                "estack": "AssertionError: Timed out retrying after 0ms: expected 5 to be at least 60\n    at Context.eval (webpack:///./cypress/e2e/_requirements/05.TestCoverage.cy.js:9:79)",
+                "diff": "- 5\n+ 60\n"
+              },
+              "uuid": "b401c2eb-0fd4-4533-bb19-d7de8f5ca430",
+              "parentUUID": "e87148c4-6af7-4fdb-8b65-ef22edb9349c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Branches\" total deverá ser maior ou igual a 60.",
+              "fullTitle": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação Cobertura de \"Branches\" total deverá ser maior ou igual a 60.",
+              "timedOut": null,
+              "duration": 48,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.branches.pct', {\n  timeout: 0\n}).should('be.gte', 60.00);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 0ms: expected 16.66 to be at least 60",
+                "estack": "AssertionError: Timed out retrying after 0ms: expected 16.66 to be at least 60\n    at Context.eval (webpack:///./cypress/e2e/_requirements/05.TestCoverage.cy.js:13:78)",
+                "diff": "- 16.66\n+ 60\n"
+              },
+              "uuid": "f08f0113-d896-46c4-9cb4-838249aac1f9",
+              "parentUUID": "e87148c4-6af7-4fdb-8b65-ef22edb9349c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Lines\" total deverá ser maior ou igual a 60.",
+              "fullTitle": "5 - Desenvolva testes para atingir 60% de cobertura total da aplicação Cobertura de \"Lines\" total deverá ser maior ou igual a 60.",
+              "timedOut": null,
+              "duration": 31,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.lines.pct', {\n  timeout: 0\n}).should('be.gte', 60.00);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 0ms: expected 25 to be at least 60",
+                "estack": "AssertionError: Timed out retrying after 0ms: expected 25 to be at least 60\n    at Context.eval (webpack:///./cypress/e2e/_requirements/05.TestCoverage.cy.js:17:75)",
+                "diff": "- 25\n+ 60\n"
+              },
+              "uuid": "a5b4daa3-29e8-47cb-9789-4ff8768de6ef",
+              "parentUUID": "e87148c4-6af7-4fdb-8b65-ef22edb9349c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "31c9d8a9-e81b-4364-b3d6-7ae780db3c66",
+            "b401c2eb-0fd4-4533-bb19-d7de8f5ca430",
+            "f08f0113-d896-46c4-9cb4-838249aac1f9",
+            "a5b4daa3-29e8-47cb-9789-4ff8768de6ef"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2993,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "17308937-008e-410e-b421-e29ab486f84c",
+          "title": "6 - Desenvolva uma tabela com os gastos contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A tabela deve possuir um cabeçalho com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão",
+              "fullTitle": "6 - Desenvolva uma tabela com os gastos contendo as seguintes características: A tabela deve possuir um cabeçalho com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão",
+              "timedOut": null,
+              "duration": 123,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('th').should('have.length', _constants.tableHeaderList.length);\ncy.wrap(_constants.tableHeaderList).each(header => {\n  cy.get('th').contains(header);\n});",
+              "err": {
+                "message": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `6 - Desenvolva uma tabela c...`",
+                "estack": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `6 - Desenvolva uma tabela c...`\n    at wallet (http://localhost:3000/static/js/bundle.js:1426:10)\n    at <unknown> (http://localhost:3000/static/js/bundle.js:44842:24)\n    at Array.forEach (<anonymous>)\n    at assertReducerShape (http://localhost:3000/static/js/bundle.js:44840:25)\n    at combineReducers (http://localhost:3000/static/js/bundle.js:44895:5)\n    at ./src/redux/reducers/index.js (http://localhost:3000/static/js/bundle.js:1270:75)\n    at options.factory (http://localhost:3000/static/js/bundle.js:49536:31)\n    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:48982:33)\n    at fn (http://localhost:3000/static/js/bundle.js:49193:21)\n    at ./src/redux/store.js (http://localhost:3000/static/js/bundle.js:1493:67)",
+                "diff": null
+              },
+              "uuid": "77ef6bc2-6348-48b8-80a7-73642e9987c0",
+              "parentUUID": "17308937-008e-410e-b421-e29ab486f84c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "77ef6bc2-6348-48b8-80a7-73642e9987c0"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 123,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "4fa69fb4-ab58-4a12-80ad-27a6f1f99cc5",
+          "title": "7 - Implemente a lógica para que a tabela seja alimentada pelo estado da aplicação",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave expenses que vem do reducer wallet.",
+              "fullTitle": "7 - Implemente a lógica para que a tabela seja alimentada pelo estado da aplicação A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave expenses que vem do reducer wallet.",
+              "timedOut": null,
+              "duration": 97,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const expectedTableRows = [['Dez dólares', 'Trabalho', 'Cartão de débito', '10.00', 'Dólar Americano/Real Brasileiro', '4.75', '47.53', 'Real'], ['Cinco euros', 'Lazer', 'Cartão de crédito', '5.00', 'Euro/Real Brasileiro', '5.13', '25.63', 'Real']];\ncy.get('tbody tr').should('have.length', expectedTableRows.length);\ncy.get('tbody tr').each((row, index) => {\n  cy.wrap(expectedTableRows[index]).each(expectedValue => {\n    cy.get(row).find('td').contains(expectedValue);\n  });\n});",
+              "err": {
+                "message": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `7 - Implemente a lógica par...`",
+                "estack": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `7 - Implemente a lógica par...`\n    at wallet (http://localhost:3000/static/js/bundle.js:1426:10)\n    at <unknown> (http://localhost:3000/static/js/bundle.js:44842:24)\n    at Array.forEach (<anonymous>)\n    at assertReducerShape (http://localhost:3000/static/js/bundle.js:44840:25)\n    at combineReducers (http://localhost:3000/static/js/bundle.js:44895:5)\n    at ./src/redux/reducers/index.js (http://localhost:3000/static/js/bundle.js:1270:75)\n    at options.factory (http://localhost:3000/static/js/bundle.js:49536:31)\n    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:48982:33)\n    at fn (http://localhost:3000/static/js/bundle.js:49193:21)\n    at ./src/redux/store.js (http://localhost:3000/static/js/bundle.js:1493:67)",
+                "diff": null
+              },
+              "uuid": "53f07db0-a0a1-47a1-b314-70344cc21b0b",
+              "parentUUID": "4fa69fb4-ab58-4a12-80ad-27a6f1f99cc5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "53f07db0-a0a1-47a1-b314-70344cc21b0b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 97,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "2dfb80c1-f8c8-4edc-a936-9cda234e24c4",
+          "title": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"delete-btn\"`",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"delete-btn\"`",
+              "timedOut": null,
+              "duration": 73,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tbody tr').first().find('td').last().find(`button[data-testid=\"${_constants.BTN_DELETE_TEST_ID}\"]`).should('exist');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).should('have.length', 2);",
+              "err": {
+                "message": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `8 - Crie um botão para dele...`",
+                "estack": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `8 - Crie um botão para dele...`\n    at wallet (http://localhost:3000/static/js/bundle.js:1426:10)\n    at <unknown> (http://localhost:3000/static/js/bundle.js:44842:24)\n    at Array.forEach (<anonymous>)\n    at assertReducerShape (http://localhost:3000/static/js/bundle.js:44840:25)\n    at combineReducers (http://localhost:3000/static/js/bundle.js:44895:5)\n    at ./src/redux/reducers/index.js (http://localhost:3000/static/js/bundle.js:1270:75)\n    at options.factory (http://localhost:3000/static/js/bundle.js:49536:31)\n    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:48982:33)\n    at fn (http://localhost:3000/static/js/bundle.js:49193:21)\n    at ./src/redux/store.js (http://localhost:3000/static/js/bundle.js:1493:67)",
+                "diff": null
+              },
+              "uuid": "598ee259-a29f-4bea-89d5-dbef14c18403",
+              "parentUUID": "2dfb80c1-f8c8-4edc-a936-9cda234e24c4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global.",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const expectedTableRow = ['Cinco euros', 'Lazer', 'Cartão de crédito', '5.00', 'Euro/Real Brasileiro', '5.13', '25.63', 'Real'];\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click().should('not.exist');\nconst deleteBtn = 1;\ncy.get('tbody tr td').should('have.length', expectedTableRow.length + deleteBtn);\ncy.wrap(expectedTableRow).each(expectedValue => {\n  cy.get('tbody tr td').contains(expectedValue);\n});\nconst expectedExpenses = [_objectSpread(_objectSpread({}, _constants.initialExpenses[1]), {}, {\n  id: 1,\n  exchangeRates: _data.mockData\n})];\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', expectedExpenses);",
+              "err": {},
+              "uuid": "dd1e3876-aee8-4b66-a431-d2c3152dbc09",
+              "parentUUID": "2dfb80c1-f8c8-4edc-a936-9cda234e24c4",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Ao clicar no botão para remover uma despesa, o valor correspondente deve ser subtraído e a despesa total deve ser atualizada no header",
+              "fullTitle": "8 - Crie um botão para deletar uma despesa da tabela contendo as seguintes características: Ao clicar no botão para remover uma despesa, o valor correspondente deve ser subtraído e a despesa total deve ser atualizada no header",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '73.16');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click();\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '25.63');\ncy.getByTestId(_constants.BTN_DELETE_TEST_ID).first().click();\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '0.00');",
+              "err": {},
+              "uuid": "15265b15-092e-49f3-af69-12bbf4126672",
+              "parentUUID": "2dfb80c1-f8c8-4edc-a936-9cda234e24c4",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "598ee259-a29f-4bea-89d5-dbef14c18403"
+          ],
+          "pending": [],
+          "skipped": [
+            "dd1e3876-aee8-4b66-a431-d2c3152dbc09",
+            "15265b15-092e-49f3-af69-12bbf4126672"
+          ],
+          "duration": 73,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "7722a476-2858-48a0-ada5-8fd67a65c64c",
+          "title": "9 - Crie um botão para editar uma despesa da tabela contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"edit-btn\"`",
+              "fullTitle": "9 - Crie um botão para editar uma despesa da tabela contendo as seguintes características: O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid=\"edit-btn\"`",
+              "timedOut": null,
+              "duration": 83,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tbody tr').first().find('td').last().find(`button[data-testid=\"${_constants.BTN_EDIT_TEST_ID}\"]`).should('exist');\ncy.getByTestId(_constants.BTN_EDIT_TEST_ID).should('have.length', 2);",
+              "err": {
+                "message": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `9 - Crie um botão para edit...`",
+                "estack": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > EDIT_EXPENSE is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `9 - Crie um botão para edit...`\n    at wallet (http://localhost:3000/static/js/bundle.js:1426:10)\n    at <unknown> (http://localhost:3000/static/js/bundle.js:44842:24)\n    at Array.forEach (<anonymous>)\n    at assertReducerShape (http://localhost:3000/static/js/bundle.js:44840:25)\n    at combineReducers (http://localhost:3000/static/js/bundle.js:44895:5)\n    at ./src/redux/reducers/index.js (http://localhost:3000/static/js/bundle.js:1270:75)\n    at options.factory (http://localhost:3000/static/js/bundle.js:49536:31)\n    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:48982:33)\n    at fn (http://localhost:3000/static/js/bundle.js:49193:21)\n    at ./src/redux/store.js (http://localhost:3000/static/js/bundle.js:1493:67)",
+                "diff": null
+              },
+              "uuid": "62b5b812-b3c7-4ef3-a99f-4da64351eb05",
+              "parentUUID": "7722a476-2858-48a0-ada5-8fd67a65c64c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "O botão habilita um formulário para editar a linha da tabela ao ser clicado, após clicar em \"Editar despesa\" a despesa é atualizada e atualiza a soma de despesas no header.",
+              "fullTitle": "9 - Crie um botão para editar uma despesa da tabela contendo as seguintes características: O botão habilita um formulário para editar a linha da tabela ao ser clicado, após clicar em \"Editar despesa\" a despesa é atualizada e atualiza a soma de despesas no header.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.BTN_EDIT_TEST_ID).first().click();\ncy.contains(/Adicionar despesa/i).should('not.exist');\ncy.contains(/Editar despesa/i).should('exist');\n(0, _helperFunctions.editExpense)({\n  value: '200',\n  currency: 'CAD',\n  method: 'Dinheiro',\n  tag: 'Saúde',\n  description: 'Duzentos dólares canadenses'\n});\nconst expectedTableRow = ['Duzentos dólares canadenses', 'Saúde', 'Dinheiro', '200.00', 'Dólar Canadense/Real Brasileiro', '3.76', '751.18', 'Real'];\nconst deleteBtn = 1;\ncy.get('tbody tr').first().find('td').should('have.length', expectedTableRow.length + deleteBtn);\ncy.wrap(expectedTableRow).each(expectedValue => {\n  cy.get('tbody tr').first().find('td').contains(expectedValue);\n});\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '776.81');\nconst expectedExpenses = [{\n  id: 0,\n  value: '200',\n  currency: 'CAD',\n  method: 'Dinheiro',\n  tag: 'Saúde',\n  description: 'Duzentos dólares canadenses',\n  exchangeRates: _data.mockData\n}, _objectSpread(_objectSpread({}, _constants.initialExpenses[1]), {}, {\n  id: 1,\n  exchangeRates: _data.mockData\n})];\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', expectedExpenses);",
+              "err": {},
+              "uuid": "66b804da-b17d-4f24-a78e-9038fab27151",
+              "parentUUID": "7722a476-2858-48a0-ada5-8fd67a65c64c",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "62b5b812-b3c7-4ef3-a99f-4da64351eb05"
+          ],
+          "pending": [],
+          "skipped": [
+            "66b804da-b17d-4f24-a78e-9038fab27151"
+          ],
+          "duration": 83,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "67e32c8e-860d-4c5d-bbc7-ca0f990c3436",
+          "title": "10 - Desenvolva testes para atingir 90% de cobertura total da aplicação",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cobertura de \"Statements\" total deverá ser maior ou igual a 90.",
+              "fullTitle": "10 - Desenvolva testes para atingir 90% de cobertura total da aplicação Cobertura de \"Statements\" total deverá ser maior ou igual a 90.",
+              "timedOut": null,
+              "duration": 55,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.statements.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 0ms: expected 22.76 to be at least 90",
+                "estack": "AssertionError: Timed out retrying after 0ms: expected 22.76 to be at least 90\n    at Context.eval (webpack:///./cypress/e2e/_requirements/10.TestCoverage.cy.js:5:80)",
+                "diff": "- 22.76\n+ 90\n"
+              },
+              "uuid": "9b9d8237-8cbd-40e2-91e3-371aa9cfb47e",
+              "parentUUID": "67e32c8e-860d-4c5d-bbc7-ca0f990c3436",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Functions\" total deverá ser maior ou igual a 90.",
+              "fullTitle": "10 - Desenvolva testes para atingir 90% de cobertura total da aplicação Cobertura de \"Functions\" total deverá ser maior ou igual a 90.",
+              "timedOut": null,
+              "duration": 56,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.functions.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 0ms: expected 5 to be at least 90",
+                "estack": "AssertionError: Timed out retrying after 0ms: expected 5 to be at least 90\n    at Context.eval (webpack:///./cypress/e2e/_requirements/10.TestCoverage.cy.js:9:79)",
+                "diff": "- 5\n+ 90\n"
+              },
+              "uuid": "5be2a1d6-53b3-4251-b747-d393384fede6",
+              "parentUUID": "67e32c8e-860d-4c5d-bbc7-ca0f990c3436",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Branches\" total deverá ser maior ou igual a 90.",
+              "fullTitle": "10 - Desenvolva testes para atingir 90% de cobertura total da aplicação Cobertura de \"Branches\" total deverá ser maior ou igual a 90.",
+              "timedOut": null,
+              "duration": 54,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.branches.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 0ms: expected 16.66 to be at least 90",
+                "estack": "AssertionError: Timed out retrying after 0ms: expected 16.66 to be at least 90\n    at Context.eval (webpack:///./cypress/e2e/_requirements/10.TestCoverage.cy.js:13:78)",
+                "diff": "- 16.66\n+ 90\n"
+              },
+              "uuid": "3dbbd03b-3717-421c-b94c-dead2450234e",
+              "parentUUID": "67e32c8e-860d-4c5d-bbc7-ca0f990c3436",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cobertura de \"Lines\" total deverá ser maior ou igual a 90.",
+              "fullTitle": "10 - Desenvolva testes para atingir 90% de cobertura total da aplicação Cobertura de \"Lines\" total deverá ser maior ou igual a 90.",
+              "timedOut": null,
+              "duration": 60,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', (0, _getId.getId)()).its('total.lines.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 0ms: expected 25 to be at least 90",
+                "estack": "AssertionError: Timed out retrying after 0ms: expected 25 to be at least 90\n    at Context.eval (webpack:///./cypress/e2e/_requirements/10.TestCoverage.cy.js:17:75)",
+                "diff": "- 25\n+ 90\n"
+              },
+              "uuid": "21de40e8-86da-4c52-a639-81e52dff169b",
+              "parentUUID": "67e32c8e-860d-4c5d-bbc7-ca0f990c3436",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "9b9d8237-8cbd-40e2-91e3-371aa9cfb47e",
+            "5be2a1d6-53b3-4251-b747-d393384fede6",
+            "3dbbd03b-3717-421c-b94c-dead2450234e",
+            "21de40e8-86da-4c52-a639-81e52dff169b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 225,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
